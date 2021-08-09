@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="DIOSeries.ControlsWPF.LoadLine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:local="clr-namespace:DIOSeries.ControlsWPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="500">
+    <Grid>
+        <mah:MetroProgressBar VerticalAlignment="Center" Margin="0,114,0,39" IsIndeterminate="True" Foreground="White" Grid.ColumnSpan="3" Grid.Row="2"/>
+    </Grid>
+</UserControl>

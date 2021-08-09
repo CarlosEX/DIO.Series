@@ -2,12 +2,15 @@
 
 namespace DIOSeries.Bussines {
     public interface ISerie {
-        bool Deleted { get; set; }
-        string Description { get; set; }
-        IGender Gender { get; set; }
         int Id { get; }
         string Title { get; set; }
-        int Year { get; set; }
+        string Description { get; set; }
+        string Year { get; set; }
+        string Image { get; set; }
+        int Views { get; set; }
+        IGender Gender { get; set; }
+        StateRegister Deleted { get; set; }
+        
 
         event PropertyChangedEventHandler PropertyChanged;
     }

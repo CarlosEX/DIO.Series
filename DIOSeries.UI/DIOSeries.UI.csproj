@@ -121,7 +121,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ManagerDatabase\ApplicationDatabase.cs" />
@@ -150,11 +152,23 @@
     <Compile Include="View\Controls\CardThumbSerie.Designer.cs">
       <DependentUpon>CardThumbSerie.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\FormCategorias.cs">
+    <Compile Include="View\Controls\ViewsVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\ViewsVideo.Designer.cs">
+      <DependentUpon>ViewsVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\FormCategorias.Designer.cs">
-      <DependentUpon>FormCategorias.cs</DependentUpon>
+    <Compile Include="View\Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\FormRegisterGender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\FormRegisterGender.Designer.cs">
+      <DependentUpon>FormRegisterGender.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\FormEditeGender.cs">
       <SubType>Form</SubType>
@@ -176,6 +190,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Forms\FormRegisterSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\FormRegisterSerie.Designer.cs">
+      <DependentUpon>FormRegisterSerie.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\FormSeries.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,8 +229,14 @@
     <EmbeddedResource Include="View\Controls\CardThumbSerie.resx">
       <DependentUpon>CardThumbSerie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\FormCategorias.resx">
-      <DependentUpon>FormCategorias.cs</DependentUpon>
+    <EmbeddedResource Include="View\Controls\ViewsVideo.resx">
+      <DependentUpon>ViewsVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\FormRegisterGender.resx">
+      <DependentUpon>FormRegisterGender.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormEditeGender.resx">
       <DependentUpon>FormEditeGender.cs</DependentUpon>
@@ -231,6 +257,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Forms\FormRegisterSerie.resx">
+      <DependentUpon>FormRegisterSerie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormSeries.resx">
       <DependentUpon>FormSeries.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,7 +300,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\gif_net_flix.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\database_series.db" />
     <None Include="Resources\gif_netflix_home.gif" />
@@ -304,6 +335,9 @@
       <Project>{de1c11e4-5542-47c1-b14f-0a41dbe04b5f}</Project>
       <Name>DIOSeries.Database</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_thumb_default_series.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

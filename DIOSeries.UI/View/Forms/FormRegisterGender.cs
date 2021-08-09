@@ -24,6 +24,9 @@ namespace DIOSeries.UI {
             this.deletarCategoriaToolStripMenuItem.Click += DeletedGender_Click;
             this.buttonAddGender.Click += AddGender_Click;
             this.editarToolStripMenuItem.Click += OpenFormRenameGender_Click;
+            this.radioButtonFilterAll.CheckedChanged += RadioButtonFilter_Changed;
+            this.radioButtonFilterDeleted.CheckedChanged += RadioButtonFilter_Changed;
+            this.radioButtonFilterActive.CheckedChanged += RadioButtonFilter_Changed;
         }
         private string ParametersFilterColumnDeleted() {
 

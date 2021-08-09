@@ -26,18 +26,24 @@ namespace DIOSeries.UI {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSeries));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.colorSliderWidth = new ColorSlider.ColorSlider();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.buttonReflash = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.colorSliderHeight = new ColorSlider.ColorSlider();
             this.panelSeries = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -46,15 +52,23 @@ namespace DIOSeries.UI {
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.colorSliderWidth);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1249, 88);
             this.panel1.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.colorSliderWidth);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(189, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(901, 88);
+            this.panel4.TabIndex = 12;
             // 
             // colorSliderWidth
             // 
@@ -62,6 +76,7 @@ namespace DIOSeries.UI {
             this.colorSliderWidth.BarPenColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(94)))), ((int)(((byte)(110)))));
             this.colorSliderWidth.BarPenColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(60)))), ((int)(((byte)(74)))));
             this.colorSliderWidth.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+            this.colorSliderWidth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.colorSliderWidth.ElapsedInnerColor = System.Drawing.Color.Maroon;
             this.colorSliderWidth.ElapsedPenColorBottom = System.Drawing.Color.Maroon;
             this.colorSliderWidth.ElapsedPenColorTop = System.Drawing.Color.Maroon;
@@ -72,7 +87,7 @@ namespace DIOSeries.UI {
             0,
             0,
             0});
-            this.colorSliderWidth.Location = new System.Drawing.Point(206, 23);
+            this.colorSliderWidth.Location = new System.Drawing.Point(0, 0);
             this.colorSliderWidth.Maximum = new decimal(new int[] {
             500,
             0,
@@ -97,13 +112,13 @@ namespace DIOSeries.UI {
             0});
             this.colorSliderWidth.ShowDivisionsText = true;
             this.colorSliderWidth.ShowSmallScale = false;
-            this.colorSliderWidth.Size = new System.Drawing.Size(719, 48);
+            this.colorSliderWidth.Size = new System.Drawing.Size(901, 88);
             this.colorSliderWidth.SmallChange = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.colorSliderWidth.TabIndex = 16;
+            this.colorSliderWidth.TabIndex = 17;
             this.colorSliderWidth.Text = "Largura";
             this.colorSliderWidth.ThumbInnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
             this.colorSliderWidth.ThumbOuterColor = System.Drawing.Color.Firebrick;
@@ -119,19 +134,44 @@ namespace DIOSeries.UI {
             0,
             0,
             0});
-            this.colorSliderWidth.ValueChanged += new System.EventHandler(this.ColorSliderWidth_ValueChanged);
             // 
-            // label4
+            // panel5
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(931, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 28);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Pesquisa";
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1090, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(159, 88);
+            this.panel5.TabIndex = 11;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 88);
+            this.button3.TabIndex = 9;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.textBox1.Location = new System.Drawing.Point(22, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(122, 34);
+            this.textBox1.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -144,19 +184,10 @@ namespace DIOSeries.UI {
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.textBox1.Location = new System.Drawing.Point(1038, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 34);
-            this.textBox1.TabIndex = 4;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.buttonReflash);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button5);
@@ -165,6 +196,23 @@ namespace DIOSeries.UI {
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(85, 430);
             this.panel2.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(0, 350);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 80);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Atualizar";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // buttonReflash
             // 
@@ -180,8 +228,8 @@ namespace DIOSeries.UI {
             this.buttonReflash.Size = new System.Drawing.Size(85, 80);
             this.buttonReflash.TabIndex = 8;
             this.buttonReflash.Text = "Atualizar";
-            this.buttonReflash.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonReflash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonReflash.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonReflash.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonReflash.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -193,13 +241,13 @@ namespace DIOSeries.UI {
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.Location = new System.Drawing.Point(0, 80);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 80);
             this.button1.TabIndex = 7;
             this.button1.Text = "Séries";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -212,13 +260,13 @@ namespace DIOSeries.UI {
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.Location = new System.Drawing.Point(0, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 80);
             this.button5.TabIndex = 6;
             this.button5.Text = "Categorias";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -250,12 +298,12 @@ namespace DIOSeries.UI {
             0});
             this.colorSliderHeight.Location = new System.Drawing.Point(0, 0);
             this.colorSliderHeight.Maximum = new decimal(new int[] {
-            600,
+            500,
             0,
             0,
             0});
             this.colorSliderHeight.Minimum = new decimal(new int[] {
-            300,
+            250,
             0,
             0,
             0});
@@ -290,6 +338,7 @@ namespace DIOSeries.UI {
             this.colorSliderHeight.TickAdd = 0F;
             this.colorSliderHeight.TickColor = System.Drawing.Color.Silver;
             this.colorSliderHeight.TickDivide = 0F;
+            this.colorSliderHeight.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.colorSliderHeight.Value = new decimal(new int[] {
             500,
             0,
@@ -305,6 +354,24 @@ namespace DIOSeries.UI {
             this.panelSeries.Name = "panelSeries";
             this.panelSeries.Size = new System.Drawing.Size(1101, 430);
             this.panelSeries.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(0, 240);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 80);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Download";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // FormSeries
             // 
@@ -322,7 +389,9 @@ namespace DIOSeries.UI {
             this.Text = "Series";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -334,14 +403,18 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonReflash;
-        private ColorSlider.ColorSlider colorSliderWidth;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelSeries;
         private ColorSlider.ColorSlider colorSliderHeight;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel4;
+        private ColorSlider.ColorSlider colorSliderWidth;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

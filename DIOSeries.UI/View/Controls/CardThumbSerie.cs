@@ -6,7 +6,11 @@ namespace DIOSeries.UI.Controls {
     public partial class CardThumbSerie : UserControl {
         
         public event EventHandler ButtonClick;
-        
+
+        public CardThumbSerie() {
+            InitializeComponent();
+        }
+
         public CardThumbSerie(string pathImage) {
             InitializeComponent();
             this.buttonPlay.Click += ButonPlay_Click;

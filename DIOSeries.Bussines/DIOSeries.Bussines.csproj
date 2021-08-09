@@ -41,12 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Enum\StateRegister.cs" />
     <Compile Include="Entities\Factory\GenderFactory.cs" />
+    <Compile Include="Entities\Factory\SerieFactoy.cs" />
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Interface\IGender.cs" />
     <Compile Include="Entities\Interface\ISerie.cs" />
     <Compile Include="Entities\Serie.cs" />
-    <Compile Include="Entities\Series.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

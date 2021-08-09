@@ -61,6 +61,26 @@ namespace DIO.Series.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gif_net_flix {
+            get {
+                object obj = ResourceManager.GetObject("gif_net_flix", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_thumb_default_series {
+            get {
+                object obj = ResourceManager.GetObject("image_thumb_default_series", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Novo valor.
         /// </summary>
         internal static string String1 {

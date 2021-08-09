@@ -60,10 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Base.cs" />
+    <Compile Include="Entities\BaseDatabase.cs" />
     <Compile Include="Entities\Factory\GenderDatabaseFactory.cs" />
+    <Compile Include="Entities\Factory\SerieDatabaseFactory.cs" />
     <Compile Include="Entities\GenderDatabase.cs" />
     <Compile Include="Entities\Interfaces\IBase.cs" />
+    <Compile Include="Entities\SerieDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

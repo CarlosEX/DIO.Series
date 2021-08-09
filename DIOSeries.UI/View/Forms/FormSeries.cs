@@ -17,6 +17,9 @@ namespace DIOSeries.UI {
             InitializeComponent();
             CreateSections();
             buttonReflash.Click += ButtonReload_Click;
+            colorSliderWidth.ValueChanged += ColorSliderWidth_ValueChanged;
+            colorSliderHeight.ValueChanged += ColorSliderHeigh_ValueChanged;
+
         }
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
@@ -55,12 +58,14 @@ namespace DIOSeries.UI {
                 new FormCategorias().ShowDialog();
             }
         }
+        private void button1_Click(object sender, EventArgs e) {
+            using (var f = new FormTempOpacitBackground(this)) {
+                new FormRegisterSerie().ShowDialog();
+            }
+        }
 
         private void ButtonReload_Click(object sender, EventArgs e) {
             CreateSections();
-        }
-        private void button1_Click(object sender, EventArgs e) {
-            
         }
 
         private void SizeBannerHeight(int heigh) {

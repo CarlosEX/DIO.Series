@@ -5,62 +5,68 @@ namespace DIOSeries.Bussines {
     public class Serie : INotifyPropertyChanged, ISerie {
         
         private int _id;
-        private IGender _gender;
         private string _title;
         private string _description;
-        private int _year;
-        private bool _deleted;
+        private string _year;
+        private string _image;
+        private int _views;
+        private IGender _gender;
+        private StateRegister _deleted;
 
-        public int Id { get => _id; protected set => _id = value; }
-
-        public IGender Gender {
-            get => _gender;
-            set {
-                if (_gender != null) {
-                    _gender = value;
-                    RaisePropertyChanges();
-                }
-            }
-        }
-
+        public int Id { get => _id; set => _id = value; }
         public string Title {
             get => _title;
             set {
-                if (_title != null) {
-                    _title = value;
-                    RaisePropertyChanges();
-                }
+                _title = value;
             }
         }
-
         public string Description {
             get => _description;
             set {
-                if (_description != null) {
-                    _description = value;
-                    RaisePropertyChanges();
-                }
+                _description = value;
+                RaisePropertyChanges();
+
             }
         }
-
-        public int Year {
+        public string Year {
             get => _year;
             set {
                 _year = value;
                 RaisePropertyChanges();
             }
         }
-
-        public bool Deleted {
+        public string Image {
+            get => _image;
+            set {
+                _image = value;
+                RaisePropertyChanges();
+            }
+        }
+        public int Views {
+            get => _views;
+            set {
+                _views = value;
+                RaisePropertyChanges();
+            }
+        }
+        public IGender Gender {
+            get => _gender;
+            set {
+                _gender = value;
+                RaisePropertyChanges();
+            }
+        }
+        public StateRegister Deleted {
             get => _deleted;
             set {
                 _deleted = value;
                 RaisePropertyChanges();
             }
         }
-
-        public Serie() {
-
+        public Serie(string title, IGender gender ) {
+            _title = title;
+            _gender = gender;
+            _deleted = 0;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

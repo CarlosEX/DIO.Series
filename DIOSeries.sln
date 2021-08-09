@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIOSeries.Database", "DIOSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorSlider", "..\..\..\..\..\Downloads\ColorSliderProject\ColorSlider\ColorSlider.csproj", "{16E224DC-7FF0-4908-8318-D6A3AC2E797A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{CA233971-719A-48F9-9973-0E9EDA962CF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bussines", "Bussines", "{1AD0E41D-9A61-4879-98A3-73DACA72A4D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FA4C674C-9D97-457C-9894-2FC865082582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +42,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4523C581-E319-4707-A602-2834E8C7A2B9} = {1AD0E41D-9A61-4879-98A3-73DACA72A4D7}
+		{3FE4E697-B887-4393-A9B5-55E327DE866D} = {CA233971-719A-48F9-9973-0E9EDA962CF4}
+		{DE1C11E4-5542-47C1-B14F-0A41DBE04B5F} = {FA4C674C-9D97-457C-9894-2FC865082582}
+		{16E224DC-7FF0-4908-8318-D6A3AC2E797A} = {CA233971-719A-48F9-9973-0E9EDA962CF4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3CDE41D-D815-49C3-9C60-E4AD78CBABBA}
