@@ -1,4 +1,6 @@
 ﻿
+using ColorSlider;
+
 namespace DIOSeries.UI {
     partial class FormSeries {
         /// <summary>
