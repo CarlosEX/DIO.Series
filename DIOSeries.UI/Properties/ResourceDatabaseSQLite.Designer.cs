@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DIO.Series.Properties {
+namespace DIOSeries.UI.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DIO.Series.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DIO.Series.Properties.ResourceDatabaseSQLite", typeof(ResourceDatabaseSQLite).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DIOSeries.UI.Properties.ResourceDatabaseSQLite", typeof(ResourceDatabaseSQLite).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

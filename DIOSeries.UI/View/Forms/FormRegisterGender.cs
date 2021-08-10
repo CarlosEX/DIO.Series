@@ -12,7 +12,7 @@ namespace DIOSeries.UI {
         private const string filterDeletedeGender = "(1)";
         private static readonly string _connectionString  = ApplicationDatabase.ConnectionString;
         private readonly IGender _gender = GenderFactory.Create();
-        
+
         public FormCategorias() {
             InitializeComponent();
             LoadDataGridView();
@@ -64,7 +64,7 @@ namespace DIOSeries.UI {
             var nameGender = textBox1.Text;
 
             if (string.IsNullOrWhiteSpace(nameGender)) {
-                MessageBox.Show("Informe um nome!");
+                new FormBoxAlert().ShowError("Campo nome obrigatório");
                 textBox1.Select();
             }
             else {
@@ -72,8 +72,7 @@ namespace DIOSeries.UI {
 
                 var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
                 genderDatabase.Insert();
-
-                MessageBox.Show("Categoria criada com sucesso!", "Nova categoria", buttons: MessageBoxButtons.OK);
+                new FormBoxAlert().ShowSuccess("Categoria criada com sucesso!");
                 LoadDataGridView();
             }
         }
@@ -102,13 +101,15 @@ namespace DIOSeries.UI {
 
             var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
             genderDatabase.Update();
-            MessageBox.Show("Alteração concluída!", "Sucesso", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Information);
-           
+
+            new FormBoxAlert().ShowSuccess();
+     
             LoadDataGridView();
         }
         #endregion
 
         #region Events
+       
         private void DeletedGender_Click(object sender, EventArgs e) {
             DeteteGender();
         }

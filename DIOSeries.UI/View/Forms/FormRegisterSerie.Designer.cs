@@ -26,39 +26,43 @@ namespace DIOSeries.UI {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegisterSerie));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBoxGender = new System.Windows.Forms.TextBox();
-            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBoxYear = new System.Windows.Forms.TextBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBoxThumb = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButtonImageNormal = new System.Windows.Forms.RadioButton();
+            this.radioButtonImageZoom = new System.Windows.Forms.RadioButton();
+            this.radioButtonImageStrech = new System.Windows.Forms.RadioButton();
+            this.textBoxPathImage = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonOpenListSeries = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.viewsVideoSerie = new DIO.Series.View.Controls.ViewsVideo();
-            this.textBoxIdGender = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxCustomDescription = new DIO.Series.View.Controls.TextBoxCustom();
+            this.textBoxCustomGenderId = new DIO.Series.View.Controls.TextBoxCustom();
+            this.textBoxCustomGenderName = new DIO.Series.View.Controls.TextBoxCustom();
+            this.textBoxCustomYear = new DIO.Series.View.Controls.TextBoxCustom();
+            this.textBoxCustomTitle = new DIO.Series.View.Controls.TextBoxCustom();
             this.panel2.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumb)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.buttonSave);
             this.panel2.Controls.Add(this.buttonNew);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -67,16 +71,35 @@ namespace DIOSeries.UI {
             this.panel2.Size = new System.Drawing.Size(85, 619);
             this.panel2.TabIndex = 19;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 160);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 80);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Split";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button3
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 160);
+            this.button3.Location = new System.Drawing.Point(0, 539);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 80);
             this.button3.TabIndex = 10;
@@ -84,23 +107,6 @@ namespace DIOSeries.UI {
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 539);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 80);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Atualizar";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // buttonSave
             // 
@@ -139,224 +145,257 @@ namespace DIOSeries.UI {
             this.buttonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonNew.UseVisualStyleBackColor = true;
             // 
-            // panel7
+            // splitContainer1
             // 
-            this.panel7.Controls.Add(this.pictureBox2);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(85, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(670, 291);
-            this.panel7.TabIndex = 21;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(85, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // pictureBox2
+            // splitContainer1.Panel1
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(670, 291);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.splitContainer1.Panel1.Controls.Add(this.pictureBoxThumb);
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
             // 
-            // panel3
+            // splitContainer1.Panel2
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.textBoxIdGender);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.viewsVideoSerie);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.textBoxGender);
-            this.panel3.Controls.Add(this.richTextBoxDescription);
-            this.panel3.Controls.Add(this.panel9);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.textBoxYear);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.textBoxTitle);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(85, 291);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(670, 328);
-            this.panel3.TabIndex = 22;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.splitContainer1.Panel2.Controls.Add(this.panel3);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomDescription);
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomGenderId);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonOpenListSeries);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomGenderName);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomYear);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomTitle);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.label5);
+            this.splitContainer1.Size = new System.Drawing.Size(670, 619);
+            this.splitContainer1.SplitterDistance = 223;
+            this.splitContainer1.TabIndex = 20;
             // 
-            // label1
+            // pictureBoxThumb
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(68, 303);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Descrição";
+            this.pictureBoxThumb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxThumb.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxThumb.Name = "pictureBoxThumb";
+            this.pictureBoxThumb.Size = new System.Drawing.Size(670, 198);
+            this.pictureBoxThumb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxThumb.TabIndex = 1;
+            this.pictureBoxThumb.TabStop = false;
             // 
-            // button4
+            // panel1
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(602, 51);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 30);
-            this.button4.TabIndex = 33;
-            this.button4.UseVisualStyleBackColor = false;
+            this.panel1.Controls.Add(this.radioButtonImageNormal);
+            this.panel1.Controls.Add(this.radioButtonImageZoom);
+            this.panel1.Controls.Add(this.radioButtonImageStrech);
+            this.panel1.Controls.Add(this.textBoxPathImage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 198);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(670, 25);
+            this.panel1.TabIndex = 0;
             // 
-            // textBoxGender
+            // radioButtonImageNormal
             // 
-            this.textBoxGender.BackColor = System.Drawing.Color.Black;
-            this.textBoxGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBoxGender.ForeColor = System.Drawing.Color.MistyRose;
-            this.textBoxGender.Location = new System.Drawing.Point(269, 53);
-            this.textBoxGender.Name = "textBoxGender";
-            this.textBoxGender.Size = new System.Drawing.Size(294, 28);
-            this.textBoxGender.TabIndex = 32;
+            this.radioButtonImageNormal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButtonImageNormal.AutoSize = true;
+            this.radioButtonImageNormal.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButtonImageNormal.Location = new System.Drawing.Point(486, 4);
+            this.radioButtonImageNormal.Name = "radioButtonImageNormal";
+            this.radioButtonImageNormal.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonImageNormal.TabIndex = 3;
+            this.radioButtonImageNormal.TabStop = true;
+            this.radioButtonImageNormal.Text = "Normal";
+            this.radioButtonImageNormal.UseVisualStyleBackColor = true;
             // 
-            // richTextBoxDescription
+            // radioButtonImageZoom
             // 
-            this.richTextBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxDescription.BackColor = System.Drawing.Color.Black;
-            this.richTextBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxDescription.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxDescription.Location = new System.Drawing.Point(83, 99);
-            this.richTextBoxDescription.Name = "richTextBoxDescription";
-            this.richTextBoxDescription.Size = new System.Drawing.Size(546, 182);
-            this.richTextBoxDescription.TabIndex = 31;
-            this.richTextBoxDescription.Text = "";
+            this.radioButtonImageZoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButtonImageZoom.AutoSize = true;
+            this.radioButtonImageZoom.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButtonImageZoom.Location = new System.Drawing.Point(544, 4);
+            this.radioButtonImageZoom.Name = "radioButtonImageZoom";
+            this.radioButtonImageZoom.Size = new System.Drawing.Size(52, 17);
+            this.radioButtonImageZoom.TabIndex = 2;
+            this.radioButtonImageZoom.TabStop = true;
+            this.radioButtonImageZoom.Text = "Zoom";
+            this.radioButtonImageZoom.UseVisualStyleBackColor = true;
             // 
-            // panel9
+            // radioButtonImageStrech
             // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel9.Location = new System.Drawing.Point(252, 83);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(393, 1);
-            this.panel9.TabIndex = 30;
+            this.radioButtonImageStrech.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.radioButtonImageStrech.AutoSize = true;
+            this.radioButtonImageStrech.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.radioButtonImageStrech.Location = new System.Drawing.Point(602, 4);
+            this.radioButtonImageStrech.Name = "radioButtonImageStrech";
+            this.radioButtonImageStrech.Size = new System.Drawing.Size(56, 17);
+            this.radioButtonImageStrech.TabIndex = 1;
+            this.radioButtonImageStrech.TabStop = true;
+            this.radioButtonImageStrech.Text = "Strech";
+            this.radioButtonImageStrech.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // textBoxPathImage
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(181, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Categorias";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel8.Location = new System.Drawing.Point(71, 86);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(80, 1);
-            this.panel8.TabIndex = 28;
-            // 
-            // textBoxYear
-            // 
-            this.textBoxYear.BackColor = System.Drawing.Color.Black;
-            this.textBoxYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBoxYear.ForeColor = System.Drawing.Color.MistyRose;
-            this.textBoxYear.Location = new System.Drawing.Point(83, 56);
-            this.textBoxYear.Name = "textBoxYear";
-            this.textBoxYear.Size = new System.Drawing.Size(54, 28);
-            this.textBoxYear.TabIndex = 27;
+            this.textBoxPathImage.BackColor = System.Drawing.Color.Black;
+            this.textBoxPathImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPathImage.Enabled = false;
+            this.textBoxPathImage.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxPathImage.Location = new System.Drawing.Point(6, 8);
+            this.textBoxPathImage.Name = "textBoxPathImage";
+            this.textBoxPathImage.Size = new System.Drawing.Size(373, 13);
+            this.textBoxPathImage.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(15, 56);
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(25, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Ano";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "DESCRIÇÃO";
             // 
-            // panel5
+            // buttonOpenListSeries
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel5.Location = new System.Drawing.Point(71, 287);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(573, 1);
-            this.panel5.TabIndex = 25;
+            this.buttonOpenListSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenListSeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenListSeries.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenListSeries.Image")));
+            this.buttonOpenListSeries.Location = new System.Drawing.Point(602, 141);
+            this.buttonOpenListSeries.Name = "buttonOpenListSeries";
+            this.buttonOpenListSeries.Size = new System.Drawing.Size(44, 37);
+            this.buttonOpenListSeries.TabIndex = 76;
+            this.buttonOpenListSeries.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(15, 99);
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(175, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Descrição";
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel6.Location = new System.Drawing.Point(71, 44);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(573, 1);
-            this.panel6.TabIndex = 22;
-            // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTitle.BackColor = System.Drawing.Color.Black;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBoxTitle.ForeColor = System.Drawing.Color.MistyRose;
-            this.textBoxTitle.Location = new System.Drawing.Point(83, 14);
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(561, 28);
-            this.textBoxTitle.TabIndex = 21;
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "CATEGORIA";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(15, 14);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(25, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Nome";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "ANO";
             // 
-            // viewsVideoSerie
+            // label1
             // 
-            this.viewsVideoSerie.BackColor = System.Drawing.Color.Black;
-            this.viewsVideoSerie.Enabled = false;
-            this.viewsVideoSerie.Location = new System.Drawing.Point(18, 278);
-            this.viewsVideoSerie.Name = "viewsVideoSerie";
-            this.viewsVideoSerie.Size = new System.Drawing.Size(39, 38);
-            this.viewsVideoSerie.TabIndex = 34;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(25, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "NOME:";
             // 
-            // textBoxIdGender
+            // label6
             // 
-            this.textBoxIdGender.BackColor = System.Drawing.Color.Black;
-            this.textBoxIdGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIdGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBoxIdGender.ForeColor = System.Drawing.Color.MistyRose;
-            this.textBoxIdGender.Location = new System.Drawing.Point(569, 51);
-            this.textBoxIdGender.Name = "textBoxIdGender";
-            this.textBoxIdGender.Size = new System.Drawing.Size(27, 28);
-            this.textBoxIdGender.TabIndex = 36;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(22, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(373, 26);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "Esse é um projeto que desenvolvi como parte dos desefios da plataforma DIO\r\ne do " +
+    "Bootcamp da Averes relacionados a plataforma .NET com C#\r\n";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Location = new System.Drawing.Point(20, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(287, 29);
+            this.label5.TabIndex = 69;
+            this.label5.Text = "Detalhes da minha série";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(670, 4);
+            this.panel3.TabIndex = 80;
+            // 
+            // textBoxCustomDescription
+            // 
+            this.textBoxCustomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCustomDescription.BackColor = System.Drawing.Color.Black;
+            this.textBoxCustomDescription.ForeColor = System.Drawing.Color.White;
+            this.textBoxCustomDescription.Location = new System.Drawing.Point(28, 221);
+            this.textBoxCustomDescription.MaxLenght = 2147483647;
+            this.textBoxCustomDescription.Multiline = true;
+            this.textBoxCustomDescription.Name = "textBoxCustomDescription";
+            this.textBoxCustomDescription.Size = new System.Drawing.Size(618, 159);
+            this.textBoxCustomDescription.TabIndex = 79;
+            // 
+            // textBoxCustomGenderId
+            // 
+            this.textBoxCustomGenderId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCustomGenderId.BackColor = System.Drawing.Color.Black;
+            this.textBoxCustomGenderId.ForeColor = System.Drawing.Color.White;
+            this.textBoxCustomGenderId.Location = new System.Drawing.Point(544, 141);
+            this.textBoxCustomGenderId.MaxLenght = 2147483647;
+            this.textBoxCustomGenderId.Multiline = true;
+            this.textBoxCustomGenderId.Name = "textBoxCustomGenderId";
+            this.textBoxCustomGenderId.Size = new System.Drawing.Size(52, 37);
+            this.textBoxCustomGenderId.TabIndex = 77;
+            this.textBoxCustomGenderId.Visible = false;
+            // 
+            // textBoxCustomGenderName
+            // 
+            this.textBoxCustomGenderName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCustomGenderName.BackColor = System.Drawing.Color.Black;
+            this.textBoxCustomGenderName.ForeColor = System.Drawing.Color.White;
+            this.textBoxCustomGenderName.Location = new System.Drawing.Point(250, 141);
+            this.textBoxCustomGenderName.MaxLenght = 2147483647;
+            this.textBoxCustomGenderName.Multiline = true;
+            this.textBoxCustomGenderName.Name = "textBoxCustomGenderName";
+            this.textBoxCustomGenderName.Size = new System.Drawing.Size(294, 37);
+            this.textBoxCustomGenderName.TabIndex = 75;
+            // 
+            // textBoxCustomYear
+            // 
+            this.textBoxCustomYear.BackColor = System.Drawing.Color.Black;
+            this.textBoxCustomYear.ForeColor = System.Drawing.Color.White;
+            this.textBoxCustomYear.Location = new System.Drawing.Point(74, 141);
+            this.textBoxCustomYear.MaxLenght = 4;
+            this.textBoxCustomYear.Multiline = true;
+            this.textBoxCustomYear.Name = "textBoxCustomYear";
+            this.textBoxCustomYear.Size = new System.Drawing.Size(95, 37);
+            this.textBoxCustomYear.TabIndex = 73;
+            // 
+            // textBoxCustomTitle
+            // 
+            this.textBoxCustomTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCustomTitle.BackColor = System.Drawing.Color.Black;
+            this.textBoxCustomTitle.ForeColor = System.Drawing.Color.White;
+            this.textBoxCustomTitle.Location = new System.Drawing.Point(74, 98);
+            this.textBoxCustomTitle.MaxLenght = 2147483647;
+            this.textBoxCustomTitle.Multiline = true;
+            this.textBoxCustomTitle.Name = "textBoxCustomTitle";
+            this.textBoxCustomTitle.Size = new System.Drawing.Size(584, 37);
+            this.textBoxCustomTitle.TabIndex = 71;
             // 
             // FormRegisterSerie
             // 
@@ -364,8 +403,7 @@ namespace DIOSeries.UI {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(755, 619);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel2);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -375,38 +413,43 @@ namespace DIOSeries.UI {
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Série";
             this.panel2.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumb)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonNew;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBoxTitle;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBoxYear;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RichTextBox richTextBoxDescription;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBoxGender;
+        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButtonImageNormal;
+        private System.Windows.Forms.RadioButton radioButtonImageZoom;
+        private System.Windows.Forms.RadioButton radioButtonImageStrech;
+        private System.Windows.Forms.TextBox textBoxPathImage;
+        private System.Windows.Forms.PictureBox pictureBoxThumb;
+        private DIO.Series.View.Controls.TextBoxCustom textBoxCustomTitle;
         private System.Windows.Forms.Label label1;
-        private DIO.Series.View.Controls.ViewsVideo viewsVideoSerie;
-        private System.Windows.Forms.TextBox textBoxIdGender;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonOpenListSeries;
+        private DIO.Series.View.Controls.TextBoxCustom textBoxCustomGenderName;
+        private System.Windows.Forms.Label label3;
+        private DIO.Series.View.Controls.TextBoxCustom textBoxCustomYear;
+        private System.Windows.Forms.Label label2;
+        private DIO.Series.View.Controls.TextBoxCustom textBoxCustomGenderId;
+        private DIO.Series.View.Controls.TextBoxCustom textBoxCustomDescription;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
