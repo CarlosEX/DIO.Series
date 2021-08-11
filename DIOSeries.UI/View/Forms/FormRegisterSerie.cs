@@ -1,6 +1,5 @@
 ﻿using DIOSeries.Bussines;
 using DIOSeries.Database.Entities;
-using DIOSeries.UI.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,7 +13,7 @@ namespace DIOSeries.UI {
         public FormRegisterSerie() {
             InitializeComponent();
             LoadEvents();
-            this.pictureBoxThumb.Image = Properties.Resources.image_thumb_default_series;
+            LoadImageThumDefault();
         }
 
         private void LoadEvents() {
@@ -23,42 +22,58 @@ namespace DIOSeries.UI {
             this.radioButtonImageStrech.CheckedChanged += RadioButtonImage_ChackedChanged;
             this.pictureBoxThumb.DoubleClick += ImageThumb_DoubleClick;
             this.buttonOpenListSeries.Click += OpenFormListGenders_Click;
+            this.buttonOpenFileVideo.Click += ButtonOpenFileVideo_Click;
+            this.buttonOpenFileImage.Click += ImageThumb_DoubleClick;
+            this.buttonSplitPanelVideoImage.Click += ButtonSplitPanelVideoImage_Click;
         }
 
-        private void LoadSeries() {
-            for (int i = 0; i < 10; i++) {
-                this.Controls.Add(new CardThumbSerie() ) ;
-            }
+        private void LoadImageThumDefault() {
+            this.pictureBoxThumb.Image = Properties.Resources.image_thumb_default_series;
         }
-
-        private void SaveNewSerie() {
+       
+        private void SaveSerie() {
 
             if (IsValidateFilds()) {
-                SaveSerie();
+
+                try {
+
+                    int generId = Convert.ToInt32(textBoxCustomGenderId.Text);
+                    string titleSerie = textBoxCustomTitle.Text;
+                    string descriptionSerie = textBoxCustomDescription.Text;
+                    string yearSerie = textBoxCustomYear.Text;
+                    string pathImage = textBoxPathImage.Text;
+                    string nameGender = textBoxCustomGenderName.Text;
+
+                    IGender gender = GenderFactory.Create(generId, nameGender);
+                    
+                    ISerie serie = SerieFactoy.Create(titleSerie, gender);
+                        serie.Description = descriptionSerie;
+                        serie.Year = yearSerie;
+                        serie.Image = pathImage;
+
+                    var dataBase = new SerieDatabase(_connectionString, serie);
+                        dataBase.Insert();
+
+                    new FormBoxAlert().Show(IconBox.Success, "Serie, salva com sucesso!");
+
+                }
+                catch (Exception) {
+                    new FormBoxAlert().Show(IconBox.Erro, "Error, no salvamento da série.");
+                }
             }
-            if (!IsValidateFilds()) {
-                new FormBoxAlert().ShowError("Campos obrigatórios ausentes");
-            }
+
+            if (!IsValidateFilds())
+                new FormBoxAlert().Show(IconBox.Erro, "Campos obrigatórios ausentes");
+
         }
 
-        private void SaveSerie() {
-            var gender = GenderFactory.Create();
-            gender.Id = Convert.ToInt32(textBoxCustomGenderId.Text);
-            gender.Name = textBoxCustomGenderName.Text;
-
-            string titleSerie = textBoxCustomTitle.Text;
-            string descriptionSerie = textBoxCustomDescription.Text;
-            string yearSerie = textBoxCustomYear.Text;
-            string pathImage = textBoxPathImage.Text;
-
-            var newSerie = SerieFactoy.Create(titleSerie, gender);
-            newSerie.Description = descriptionSerie;
-            newSerie.Year = yearSerie;
-            newSerie.Image = pathImage;
-
-            var dataBase = new SerieDatabase(_connectionString, newSerie);
-            dataBase.Insert();
-            new FormBoxAlert().ShowSuccess();
+        private void ClearFilds() {
+            textBoxCustomDescription.Text = string.Empty;
+            textBoxCustomGenderId.Text = string.Empty;
+            textBoxCustomTitle.Text = string.Empty;
+            textBoxCustomYear.Text = string.Empty;
+            textBoxCustomGenderName.Text = string.Empty;
+            pictureBoxThumb.Image = Properties.Resources.image_thumb_default_series;
         }
 
         private bool IsValidateFilds() {
@@ -76,11 +91,12 @@ namespace DIOSeries.UI {
             return isValidade;
         }
 
-        private void buttonSave_Click(object sender, System.EventArgs e) {
-            SaveNewSerie();
+        private void buttonSave_Click(object sender, EventArgs e) {
+            SaveSerie();
+            ClearFilds();
         }
 
-        private void OpenFormListGenders_Click(object sender, System.EventArgs e) {
+        private void OpenFormListGenders_Click(object sender, EventArgs e) {
             using (var f = new FormTempOpacitBackground(this)) {
                 using (var form = new FormListActiveGenders()) {
                     form.ShowDialog();
@@ -92,7 +108,7 @@ namespace DIOSeries.UI {
             }
         }
 
-        private void ImageThumb_DoubleClick(object sender, System.EventArgs e) {
+        private void ImageThumb_DoubleClick(object sender, EventArgs e) {
 
             using (var result = new OpenFileDialog()) {
                 result.Filter = "Imagen (*.png;*.jpg;.jpeg;*.gif)|*.png;*.jpg;*.jpeg;*.gif";
@@ -117,18 +133,44 @@ namespace DIOSeries.UI {
             }
         }
 
-        private void RadioButtonImage_ChackedChanged(object sender, System.EventArgs e) {
+        private void RadioButtonImage_ChackedChanged(object sender, EventArgs e) {
             StylePictureBox();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            if(splitContainer1.Orientation == Orientation.Horizontal) {
-                splitContainer1.Orientation = Orientation.Vertical;
+            CustonOrientationSplitContainer(splitContainer1);
+        }
+        private void ButtonSplitPanelVideoImage_Click(object sender, EventArgs e) {
+            CustonOrientationSplitContainer(splitContainer2);
+        }
+       
+        private void CustonOrientationSplitContainer(SplitContainer splitContainer) {
+            if (splitContainer.Orientation == Orientation.Horizontal) {
+                splitContainer.Orientation = Orientation.Vertical;
             }
             else {
-                splitContainer1.Orientation = Orientation.Horizontal;
+                splitContainer.Orientation = Orientation.Horizontal;
             }
         }
 
+        private void ButtonOpenFileVideo_Click(object sender, EventArgs e) {
+            using (var result = new OpenFileDialog()) {
+                result.Filter = "Video (*.mp4;*.wav;)|*.mp4;*.wav;";
+
+                if (result.ShowDialog() == DialogResult.OK) {
+                    string fileName = result.FileName;
+                    windowVideoPlayer1.URL(fileName);
+                    textBoxPathVideo.Text = fileName;
+                }
+            }
+        }
+
+        public void Play(AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer) {
+            axWindowsMediaPlayer.Ctlcontrols.play();
+        }
+
+        public void Pause(AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer) {
+            axWindowsMediaPlayer.Ctlcontrols.pause();
+        }
     }
 }

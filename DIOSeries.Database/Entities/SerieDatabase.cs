@@ -40,6 +40,7 @@ namespace DIOSeries.Database.Entities {
                         "serie_year, " +
                         "serie_deleted, " +
                         "serie_image, " +
+                        "serie_video, " +
                         "serie_views, " +
                         "gender_id ) " +
                             "VALUES (" +
@@ -48,6 +49,7 @@ namespace DIOSeries.Database.Entities {
                             "@serie_year, " +
                             "@serie_deleted, " +
                             "@serie_image, " +
+                            "@serie_video, " +
                             "@serie_views, " +
                             "@gender_id)";
 
@@ -56,6 +58,7 @@ namespace DIOSeries.Database.Entities {
                     command.Parameters.AddWithValue($"@serie_year", _serie.Year);
                     command.Parameters.AddWithValue($"@serie_deleted", _serie.Deleted);
                     command.Parameters.AddWithValue($"@serie_image", _serie.Image);
+                    command.Parameters.AddWithValue($"@serie_video", _serie.Video);
                     command.Parameters.AddWithValue($"@serie_views", _serie.Views);
                     command.Parameters.AddWithValue($"@gender_id", _serie.Gender.Id);
                     command.ExecuteNonQuery();

@@ -25,25 +25,25 @@ namespace DIO.Series.View.Controls {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewsVideo));
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonTextViews = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button2
+            // buttonTextViews
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "50";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonTextViews.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTextViews.FlatAppearance.BorderSize = 0;
+            this.buttonTextViews.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.buttonTextViews.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.buttonTextViews.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTextViews.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
+            this.buttonTextViews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonTextViews.Location = new System.Drawing.Point(0, 0);
+            this.buttonTextViews.Name = "buttonTextViews";
+            this.buttonTextViews.Size = new System.Drawing.Size(45, 23);
+            this.buttonTextViews.TabIndex = 1;
+            this.buttonTextViews.Text = "50";
+            this.buttonTextViews.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -65,7 +65,7 @@ namespace DIO.Series.View.Controls {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonTextViews);
             this.Name = "ViewsVideo";
             this.Size = new System.Drawing.Size(45, 38);
             this.ResumeLayout(false);
@@ -74,7 +74,7 @@ namespace DIO.Series.View.Controls {
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonTextViews;
         private System.Windows.Forms.Button button1;
     }
 }

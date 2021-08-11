@@ -129,6 +129,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\CardThumbSerieFactory.cs" />
     <Compile Include="ManagerDatabase\ApplicationDatabase.cs" />
     <Compile Include="ManagerDatabase\IApplicationConnectionString.cs" />
     <Compile Include="Properties\ResourceDatabaseSQLite.Designer.cs">
@@ -142,6 +143,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\DataGridViewGender.cs" />
+    <Compile Include="Services\Enum\IconBox.cs" />
+    <Compile Include="Services\MessageBoxAlert.cs" />
     <Compile Include="Services\ValidateFildesForm.cs" />
     <Compile Include="View\Controls\BannerSeries.cs">
       <SubType>UserControl</SubType>
@@ -172,6 +175,12 @@
     </Compile>
     <Compile Include="View\Controls\ViewsVideo.Designer.cs">
       <DependentUpon>ViewsVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\WindowVideoPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Controls\WindowVideoPlayer.Designer.cs">
+      <DependentUpon>WindowVideoPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\FormBoxAlert.cs">
       <SubType>Form</SubType>
@@ -259,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\ViewsVideo.resx">
       <DependentUpon>ViewsVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Controls\WindowVideoPlayer.resx">
+      <DependentUpon>WindowVideoPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormBoxAlert.resx">
       <DependentUpon>FormBoxAlert.cs</DependentUpon>
@@ -356,6 +368,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_netflix_desktop_app.ico" />
+    <None Include="Resources\image_default_thumb.PNG" />
+    <None Include="Resources\image_default.jpg" />
+    <None Include="Resources\image_stop.png" />
+    <None Include="Resources\image_play.png" />
+    <None Include="Resources\image_pause.png" />
+    <None Include="Resources\image_play_white_24.png" />
+    <None Include="Resources\image_play_blue_24.png" />
+    <None Include="Resources\image_pause_white_24.png" />
     <None Include="Resources\netflix-gif-8.gif" />
     <None Include="Resources\image_thumb_default_series.gif" />
     <None Include="Resources\gif_net_flix.gif" />

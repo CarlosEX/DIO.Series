@@ -31,6 +31,13 @@ namespace DIOSeries.Bussines {
         public Gender() {
             _deleted = 0;
         }
+        public Gender(int id, string name) {
+            _id = id;
+            _name = name;
+            _deleted = 0;
+
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void RaisePropertyChanges([CallerMemberName]string propName = "") {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));

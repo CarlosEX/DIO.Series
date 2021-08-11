@@ -7,6 +7,7 @@ namespace DIOSeries.Bussines {
         string Description { get; set; }
         string Year { get; set; }
         string Image { get; set; }
+        string Video { get; set; }
         int Views { get; set; }
         IGender Gender { get; set; }
         StateRegister Deleted { get; set; }

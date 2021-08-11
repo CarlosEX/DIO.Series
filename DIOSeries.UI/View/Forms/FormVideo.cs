@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace DIOSeries.UI {
     public partial class FormVideo : Form {
-        public FormVideo() {
+        public FormVideo(string url) {
             InitializeComponent();
+            this.windowVideoPlayer1.URL(url);
         }
     }
 }

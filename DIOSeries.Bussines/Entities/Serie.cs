@@ -9,17 +9,20 @@ namespace DIOSeries.Bussines {
         private string _description;
         private string _year;
         private string _image;
+        private string _video;
         private int _views;
         private IGender _gender;
         private StateRegister _deleted;
 
         public int Id { get => _id; set => _id = value; }
+        
         public string Title {
             get => _title;
             set {
                 _title = value;
             }
         }
+
         public string Description {
             get => _description;
             set {
@@ -28,6 +31,7 @@ namespace DIOSeries.Bussines {
 
             }
         }
+
         public string Year {
             get => _year;
             set {
@@ -35,6 +39,7 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+
         public string Image {
             get => _image;
             set {
@@ -42,6 +47,15 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+
+        public string Video {
+            get => _video;
+            set {
+                _video = value;
+                RaisePropertyChanges();
+            }
+        }
+
         public int Views {
             get => _views;
             set {
@@ -49,6 +63,7 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+
         public IGender Gender {
             get => _gender;
             set {
@@ -56,6 +71,7 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+
         public StateRegister Deleted {
             get => _deleted;
             set {
@@ -63,6 +79,7 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+
         public Serie(string title, IGender gender ) {
             _title = title;
             _gender = gender;

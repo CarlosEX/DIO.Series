@@ -64,7 +64,7 @@ namespace DIOSeries.UI {
             var nameGender = textBox1.Text;
 
             if (string.IsNullOrWhiteSpace(nameGender)) {
-                new FormBoxAlert().ShowError("Campo nome obrigatório");
+                new FormBoxAlert().Show(IconBox.Erro, "Campo [nome] é obrigatório");
                 textBox1.Select();
             }
             else {
@@ -72,7 +72,7 @@ namespace DIOSeries.UI {
 
                 var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
                 genderDatabase.Insert();
-                new FormBoxAlert().ShowSuccess("Categoria criada com sucesso!");
+                new FormBoxAlert().Show(IconBox.Success, "Categoria criada com sucesso!" );
                 LoadDataGridView();
             }
         }
@@ -102,7 +102,7 @@ namespace DIOSeries.UI {
             var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
             genderDatabase.Update();
 
-            new FormBoxAlert().ShowSuccess();
+            new FormBoxAlert().Show(IconBox.Success);
      
             LoadDataGridView();
         }
@@ -134,7 +134,7 @@ namespace DIOSeries.UI {
                 }
             }
             catch {
-                labelInformation.Text = "Error ao renomear categoria";
+                new FormBoxAlert().Show(IconBox.Erro, "Error ao renomear categoria");
             }
         }
         #endregion

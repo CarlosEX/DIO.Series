@@ -24,6 +24,7 @@ namespace DIOSeries.UI {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegisterSerie));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -31,12 +32,23 @@ namespace DIOSeries.UI {
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxPathVideo = new System.Windows.Forms.TextBox();
+            this.buttonSplitPanelVideoImage = new System.Windows.Forms.Button();
+            this.buttonOpenFileVideo = new System.Windows.Forms.Button();
             this.pictureBoxThumb = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonOpenFileImage = new System.Windows.Forms.Button();
             this.radioButtonImageNormal = new System.Windows.Forms.RadioButton();
             this.radioButtonImageZoom = new System.Windows.Forms.RadioButton();
             this.radioButtonImageStrech = new System.Windows.Forms.RadioButton();
             this.textBoxPathImage = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.labelTempAudio = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonOpenListSeries = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,17 +56,23 @@ namespace DIOSeries.UI {
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBoxCustomDescription = new DIO.Series.View.Controls.TextBoxCustom();
             this.textBoxCustomGenderId = new DIO.Series.View.Controls.TextBoxCustom();
             this.textBoxCustomGenderName = new DIO.Series.View.Controls.TextBoxCustom();
             this.textBoxCustomYear = new DIO.Series.View.Controls.TextBoxCustom();
             this.textBoxCustomTitle = new DIO.Series.View.Controls.TextBoxCustom();
+            this.windowVideoPlayer1 = new DIOSeries.UI.View.Controls.WindowVideoPlayer();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumb)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -154,11 +172,12 @@ namespace DIOSeries.UI {
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBoxThumb);
-            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel1.Controls.Add(this.panel5);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.labelTempAudio);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomDescription);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -172,22 +191,112 @@ namespace DIOSeries.UI {
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Size = new System.Drawing.Size(670, 619);
+            this.splitContainer1.Size = new System.Drawing.Size(1043, 619);
             this.splitContainer1.SplitterDistance = 223;
             this.splitContainer1.TabIndex = 20;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.windowVideoPlayer1);
+            this.splitContainer2.Panel1.Controls.Add(this.panel6);
+            this.splitContainer2.Panel1.Controls.Add(this.panel4);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.pictureBoxThumb);
+            this.splitContainer2.Panel2.Controls.Add(this.panel7);
+            this.splitContainer2.Panel2.Controls.Add(this.panel1);
+            this.splitContainer2.Size = new System.Drawing.Size(1040, 223);
+            this.splitContainer2.SplitterDistance = 344;
+            this.splitContainer2.TabIndex = 83;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(341, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(3, 198);
+            this.panel6.TabIndex = 82;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.textBoxPathVideo);
+            this.panel4.Controls.Add(this.buttonSplitPanelVideoImage);
+            this.panel4.Controls.Add(this.buttonOpenFileVideo);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 198);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(344, 25);
+            this.panel4.TabIndex = 1;
+            // 
+            // textBoxPathVideo
+            // 
+            this.textBoxPathVideo.BackColor = System.Drawing.Color.Black;
+            this.textBoxPathVideo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPathVideo.Enabled = false;
+            this.textBoxPathVideo.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxPathVideo.Location = new System.Drawing.Point(51, 9);
+            this.textBoxPathVideo.Name = "textBoxPathVideo";
+            this.textBoxPathVideo.Size = new System.Drawing.Size(105, 13);
+            this.textBoxPathVideo.TabIndex = 2;
+            // 
+            // buttonSplitPanelVideoImage
+            // 
+            this.buttonSplitPanelVideoImage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonSplitPanelVideoImage.FlatAppearance.BorderSize = 0;
+            this.buttonSplitPanelVideoImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSplitPanelVideoImage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSplitPanelVideoImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSplitPanelVideoImage.Image = ((System.Drawing.Image)(resources.GetObject("buttonSplitPanelVideoImage.Image")));
+            this.buttonSplitPanelVideoImage.Location = new System.Drawing.Point(0, 0);
+            this.buttonSplitPanelVideoImage.Name = "buttonSplitPanelVideoImage";
+            this.buttonSplitPanelVideoImage.Size = new System.Drawing.Size(45, 25);
+            this.buttonSplitPanelVideoImage.TabIndex = 1;
+            this.buttonSplitPanelVideoImage.UseVisualStyleBackColor = true;
+            // 
+            // buttonOpenFileVideo
+            // 
+            this.buttonOpenFileVideo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonOpenFileVideo.FlatAppearance.BorderSize = 0;
+            this.buttonOpenFileVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonOpenFileVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonOpenFileVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenFileVideo.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFileVideo.Image")));
+            this.buttonOpenFileVideo.Location = new System.Drawing.Point(299, 0);
+            this.buttonOpenFileVideo.Name = "buttonOpenFileVideo";
+            this.buttonOpenFileVideo.Size = new System.Drawing.Size(45, 25);
+            this.buttonOpenFileVideo.TabIndex = 0;
+            this.buttonOpenFileVideo.UseVisualStyleBackColor = true;
             // 
             // pictureBoxThumb
             // 
             this.pictureBoxThumb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxThumb.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxThumb.Location = new System.Drawing.Point(0, 4);
             this.pictureBoxThumb.Name = "pictureBoxThumb";
-            this.pictureBoxThumb.Size = new System.Drawing.Size(670, 198);
+            this.pictureBoxThumb.Size = new System.Drawing.Size(692, 194);
             this.pictureBoxThumb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxThumb.TabIndex = 1;
+            this.pictureBoxThumb.TabIndex = 82;
             this.pictureBoxThumb.TabStop = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(692, 4);
+            this.panel7.TabIndex = 81;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonOpenFileImage);
             this.panel1.Controls.Add(this.radioButtonImageNormal);
             this.panel1.Controls.Add(this.radioButtonImageZoom);
             this.panel1.Controls.Add(this.radioButtonImageStrech);
@@ -195,15 +304,29 @@ namespace DIOSeries.UI {
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 198);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(670, 25);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(692, 25);
+            this.panel1.TabIndex = 2;
+            // 
+            // buttonOpenFileImage
+            // 
+            this.buttonOpenFileImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonOpenFileImage.FlatAppearance.BorderSize = 0;
+            this.buttonOpenFileImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonOpenFileImage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonOpenFileImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenFileImage.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFileImage.Image")));
+            this.buttonOpenFileImage.Location = new System.Drawing.Point(647, 0);
+            this.buttonOpenFileImage.Name = "buttonOpenFileImage";
+            this.buttonOpenFileImage.Size = new System.Drawing.Size(45, 25);
+            this.buttonOpenFileImage.TabIndex = 4;
+            this.buttonOpenFileImage.UseVisualStyleBackColor = true;
             // 
             // radioButtonImageNormal
             // 
             this.radioButtonImageNormal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.radioButtonImageNormal.AutoSize = true;
             this.radioButtonImageNormal.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButtonImageNormal.Location = new System.Drawing.Point(486, 4);
+            this.radioButtonImageNormal.Location = new System.Drawing.Point(446, 5);
             this.radioButtonImageNormal.Name = "radioButtonImageNormal";
             this.radioButtonImageNormal.Size = new System.Drawing.Size(58, 17);
             this.radioButtonImageNormal.TabIndex = 3;
@@ -216,7 +339,7 @@ namespace DIOSeries.UI {
             this.radioButtonImageZoom.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.radioButtonImageZoom.AutoSize = true;
             this.radioButtonImageZoom.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButtonImageZoom.Location = new System.Drawing.Point(544, 4);
+            this.radioButtonImageZoom.Location = new System.Drawing.Point(504, 5);
             this.radioButtonImageZoom.Name = "radioButtonImageZoom";
             this.radioButtonImageZoom.Size = new System.Drawing.Size(52, 17);
             this.radioButtonImageZoom.TabIndex = 2;
@@ -229,7 +352,7 @@ namespace DIOSeries.UI {
             this.radioButtonImageStrech.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.radioButtonImageStrech.AutoSize = true;
             this.radioButtonImageStrech.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButtonImageStrech.Location = new System.Drawing.Point(602, 4);
+            this.radioButtonImageStrech.Location = new System.Drawing.Point(562, 5);
             this.radioButtonImageStrech.Name = "radioButtonImageStrech";
             this.radioButtonImageStrech.Size = new System.Drawing.Size(56, 17);
             this.radioButtonImageStrech.TabIndex = 1;
@@ -245,8 +368,36 @@ namespace DIOSeries.UI {
             this.textBoxPathImage.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBoxPathImage.Location = new System.Drawing.Point(6, 8);
             this.textBoxPathImage.Name = "textBoxPathImage";
-            this.textBoxPathImage.Size = new System.Drawing.Size(373, 13);
+            this.textBoxPathImage.Size = new System.Drawing.Size(171, 13);
             this.textBoxPathImage.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1040, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(3, 223);
+            this.panel5.TabIndex = 81;
+            // 
+            // labelTempAudio
+            // 
+            this.labelTempAudio.AutoSize = true;
+            this.labelTempAudio.ForeColor = System.Drawing.Color.White;
+            this.labelTempAudio.Location = new System.Drawing.Point(421, 32);
+            this.labelTempAudio.Name = "labelTempAudio";
+            this.labelTempAudio.Size = new System.Drawing.Size(35, 13);
+            this.labelTempAudio.TabIndex = 81;
+            this.labelTempAudio.Text = "label7";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1043, 4);
+            this.panel3.TabIndex = 80;
             // 
             // label4
             // 
@@ -263,7 +414,7 @@ namespace DIOSeries.UI {
             this.buttonOpenListSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOpenListSeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOpenListSeries.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenListSeries.Image")));
-            this.buttonOpenListSeries.Location = new System.Drawing.Point(602, 141);
+            this.buttonOpenListSeries.Location = new System.Drawing.Point(975, 141);
             this.buttonOpenListSeries.Name = "buttonOpenListSeries";
             this.buttonOpenListSeries.Size = new System.Drawing.Size(44, 37);
             this.buttonOpenListSeries.TabIndex = 76;
@@ -324,15 +475,6 @@ namespace DIOSeries.UI {
             this.label5.TabIndex = 69;
             this.label5.Text = "Detalhes da minha série";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(670, 4);
-            this.panel3.TabIndex = 80;
-            // 
             // textBoxCustomDescription
             // 
             this.textBoxCustomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -344,7 +486,7 @@ namespace DIOSeries.UI {
             this.textBoxCustomDescription.MaxLenght = 2147483647;
             this.textBoxCustomDescription.Multiline = true;
             this.textBoxCustomDescription.Name = "textBoxCustomDescription";
-            this.textBoxCustomDescription.Size = new System.Drawing.Size(618, 159);
+            this.textBoxCustomDescription.Size = new System.Drawing.Size(991, 159);
             this.textBoxCustomDescription.TabIndex = 79;
             // 
             // textBoxCustomGenderId
@@ -352,7 +494,7 @@ namespace DIOSeries.UI {
             this.textBoxCustomGenderId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCustomGenderId.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomGenderId.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomGenderId.Location = new System.Drawing.Point(544, 141);
+            this.textBoxCustomGenderId.Location = new System.Drawing.Point(917, 141);
             this.textBoxCustomGenderId.MaxLenght = 2147483647;
             this.textBoxCustomGenderId.Multiline = true;
             this.textBoxCustomGenderId.Name = "textBoxCustomGenderId";
@@ -370,7 +512,7 @@ namespace DIOSeries.UI {
             this.textBoxCustomGenderName.MaxLenght = 2147483647;
             this.textBoxCustomGenderName.Multiline = true;
             this.textBoxCustomGenderName.Name = "textBoxCustomGenderName";
-            this.textBoxCustomGenderName.Size = new System.Drawing.Size(294, 37);
+            this.textBoxCustomGenderName.Size = new System.Drawing.Size(667, 37);
             this.textBoxCustomGenderName.TabIndex = 75;
             // 
             // textBoxCustomYear
@@ -394,15 +536,24 @@ namespace DIOSeries.UI {
             this.textBoxCustomTitle.MaxLenght = 2147483647;
             this.textBoxCustomTitle.Multiline = true;
             this.textBoxCustomTitle.Name = "textBoxCustomTitle";
-            this.textBoxCustomTitle.Size = new System.Drawing.Size(584, 37);
+            this.textBoxCustomTitle.Size = new System.Drawing.Size(957, 37);
             this.textBoxCustomTitle.TabIndex = 71;
+            // 
+            // windowVideoPlayer1
+            // 
+            this.windowVideoPlayer1.BackColor = System.Drawing.Color.Black;
+            this.windowVideoPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.windowVideoPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.windowVideoPlayer1.Name = "windowVideoPlayer1";
+            this.windowVideoPlayer1.Size = new System.Drawing.Size(341, 198);
+            this.windowVideoPlayer1.TabIndex = 83;
             // 
             // FormRegisterSerie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(755, 619);
+            this.ClientSize = new System.Drawing.Size(1128, 619);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel2);
             this.HelpButton = true;
@@ -418,6 +569,12 @@ namespace DIOSeries.UI {
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxThumb)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -431,12 +588,6 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButtonImageNormal;
-        private System.Windows.Forms.RadioButton radioButtonImageZoom;
-        private System.Windows.Forms.RadioButton radioButtonImageStrech;
-        private System.Windows.Forms.TextBox textBoxPathImage;
-        private System.Windows.Forms.PictureBox pictureBoxThumb;
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
@@ -451,5 +602,23 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBoxPathVideo;
+        private System.Windows.Forms.Button buttonSplitPanelVideoImage;
+        private System.Windows.Forms.Button buttonOpenFileVideo;
+        private System.Windows.Forms.PictureBox pictureBoxThumb;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonOpenFileImage;
+        private System.Windows.Forms.RadioButton radioButtonImageNormal;
+        private System.Windows.Forms.RadioButton radioButtonImageZoom;
+        private System.Windows.Forms.RadioButton radioButtonImageStrech;
+        private System.Windows.Forms.TextBox textBoxPathImage;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelTempAudio;
+        private View.Controls.WindowVideoPlayer windowVideoPlayer1;
     }
 }
