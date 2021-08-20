@@ -2,10 +2,10 @@
 
 namespace DIOSeries.Database.Entities.Factory {
     public class SerieDatabaseFactory {
-        public static SerieDatabase Create(string connectionString, ISerie serie) {
+        public static ISerieDatabase Create(string connectionString, ISerie serie) {
             return new SerieDatabase(connectionString, serie);
         }
-        public static SerieDatabase Create(string connectionString) {
+        public static ISerieDatabase Create(string connectionString) {
             return new SerieDatabase(connectionString);
         }
     }

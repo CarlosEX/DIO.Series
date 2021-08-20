@@ -13,6 +13,9 @@ namespace DIOSeries.UI.Controls {
 
         public BannerSeries(string nameGender, IList<ISerie> listSeries) {
             InitializeComponent();
+
+            this.Dock = DockStyle.Top;
+
             _listSeries = listSeries;
             SetNameGender(nameGender);
             GenerateCard();

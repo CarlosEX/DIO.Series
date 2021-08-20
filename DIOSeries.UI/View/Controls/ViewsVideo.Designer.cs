@@ -36,13 +36,14 @@ namespace DIO.Series.View.Controls {
             this.buttonTextViews.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.buttonTextViews.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.buttonTextViews.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTextViews.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
-            this.buttonTextViews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonTextViews.Location = new System.Drawing.Point(0, 0);
+            this.buttonTextViews.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.buttonTextViews.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonTextViews.Location = new System.Drawing.Point(-1, -2);
             this.buttonTextViews.Name = "buttonTextViews";
-            this.buttonTextViews.Size = new System.Drawing.Size(45, 23);
+            this.buttonTextViews.Size = new System.Drawing.Size(42, 20);
             this.buttonTextViews.TabIndex = 1;
-            this.buttonTextViews.Text = "50";
+            this.buttonTextViews.Text = "200";
+            this.buttonTextViews.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonTextViews.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -53,9 +54,10 @@ namespace DIO.Series.View.Controls {
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1, 20);
+            this.button1.Location = new System.Drawing.Point(4, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 18);
+            this.button1.Size = new System.Drawing.Size(22, 12);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -67,7 +69,7 @@ namespace DIO.Series.View.Controls {
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonTextViews);
             this.Name = "ViewsVideo";
-            this.Size = new System.Drawing.Size(45, 38);
+            this.Size = new System.Drawing.Size(40, 31);
             this.ResumeLayout(false);
 
         }

@@ -36,6 +36,8 @@ namespace DIOSeries.UI {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonReflash = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,7 +45,7 @@ namespace DIOSeries.UI {
             this.panel3 = new System.Windows.Forms.Panel();
             this.colorSliderHeight = new ColorSlider.ColorSlider();
             this.panelSeries = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -189,6 +191,8 @@ namespace DIOSeries.UI {
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.buttonReflash);
@@ -197,8 +201,44 @@ namespace DIOSeries.UI {
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(85, 430);
+            this.panel2.Size = new System.Drawing.Size(85, 543);
             this.panel2.TabIndex = 7;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(0, 320);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(85, 80);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Dashboard";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(0, 240);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 80);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Download";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -209,7 +249,7 @@ namespace DIOSeries.UI {
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 350);
+            this.button2.Location = new System.Drawing.Point(0, 463);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 80);
             this.button2.TabIndex = 9;
@@ -279,7 +319,7 @@ namespace DIOSeries.UI {
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(1186, 88);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(63, 430);
+            this.panel3.Size = new System.Drawing.Size(63, 543);
             this.panel3.TabIndex = 8;
             // 
             // colorSliderHeight
@@ -325,7 +365,7 @@ namespace DIOSeries.UI {
             0});
             this.colorSliderHeight.ShowDivisionsText = true;
             this.colorSliderHeight.ShowSmallScale = false;
-            this.colorSliderHeight.Size = new System.Drawing.Size(63, 430);
+            this.colorSliderHeight.Size = new System.Drawing.Size(63, 543);
             this.colorSliderHeight.SmallChange = new decimal(new int[] {
             3,
             0,
@@ -355,33 +395,33 @@ namespace DIOSeries.UI {
             this.panelSeries.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSeries.Location = new System.Drawing.Point(85, 88);
             this.panelSeries.Name = "panelSeries";
-            this.panelSeries.Size = new System.Drawing.Size(1101, 430);
+            this.panelSeries.Size = new System.Drawing.Size(1101, 543);
             this.panelSeries.TabIndex = 9;
             // 
-            // button4
+            // button7
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(0, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 80);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Download";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(0, 400);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 80);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "I.A";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // FormSeries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1249, 518);
+            this.ClientSize = new System.Drawing.Size(1249, 631);
             this.Controls.Add(this.panelSeries);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -419,5 +459,7 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

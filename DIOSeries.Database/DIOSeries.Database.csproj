@@ -60,11 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BaseDatabase.cs" />
+    <Compile Include="Entities\Enum\FlagGender.cs" />
     <Compile Include="Entities\Factory\GenderDatabaseFactory.cs" />
     <Compile Include="Entities\Factory\SerieDatabaseFactory.cs" />
     <Compile Include="Entities\GenderDatabase.cs" />
-    <Compile Include="Entities\Interfaces\IBase.cs" />
+    <Compile Include="Entities\Interface\IGenderDatabase.cs" />
+    <Compile Include="Entities\Interface\ISerieDatabase.cs" />
     <Compile Include="Entities\SerieDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +79,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

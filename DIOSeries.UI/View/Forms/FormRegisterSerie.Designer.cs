@@ -33,6 +33,7 @@ namespace DIOSeries.UI {
             this.buttonNew = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.windowVideoPlayer1 = new DIOSeries.UI.View.Controls.WindowVideoPlayer();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxPathVideo = new System.Windows.Forms.TextBox();
@@ -47,22 +48,18 @@ namespace DIOSeries.UI {
             this.radioButtonImageStrech = new System.Windows.Forms.RadioButton();
             this.textBoxPathImage = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.labelTempAudio = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonOpenListSeries = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBoxCustomDescription = new DIO.Series.View.Controls.TextBoxCustom();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxCustomGenderId = new DIO.Series.View.Controls.TextBoxCustom();
+            this.buttonOpenListSeries = new System.Windows.Forms.Button();
             this.textBoxCustomGenderName = new DIO.Series.View.Controls.TextBoxCustom();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBoxCustomYear = new DIO.Series.View.Controls.TextBoxCustom();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxCustomTitle = new DIO.Series.View.Controls.TextBoxCustom();
-            this.windowVideoPlayer1 = new DIOSeries.UI.View.Controls.WindowVideoPlayer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -162,6 +159,7 @@ namespace DIOSeries.UI {
             this.buttonNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Visible = false;
             // 
             // splitContainer1
             // 
@@ -177,7 +175,6 @@ namespace DIOSeries.UI {
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.labelTempAudio);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomDescription);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -189,8 +186,6 @@ namespace DIOSeries.UI {
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomTitle);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Size = new System.Drawing.Size(1043, 619);
             this.splitContainer1.SplitterDistance = 223;
             this.splitContainer1.TabIndex = 20;
@@ -215,6 +210,15 @@ namespace DIOSeries.UI {
             this.splitContainer2.Size = new System.Drawing.Size(1040, 223);
             this.splitContainer2.SplitterDistance = 344;
             this.splitContainer2.TabIndex = 83;
+            // 
+            // windowVideoPlayer1
+            // 
+            this.windowVideoPlayer1.BackColor = System.Drawing.Color.Black;
+            this.windowVideoPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.windowVideoPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.windowVideoPlayer1.Name = "windowVideoPlayer1";
+            this.windowVideoPlayer1.Size = new System.Drawing.Size(341, 198);
+            this.windowVideoPlayer1.TabIndex = 83;
             // 
             // panel6
             // 
@@ -380,16 +384,6 @@ namespace DIOSeries.UI {
             this.panel5.Size = new System.Drawing.Size(3, 223);
             this.panel5.TabIndex = 81;
             // 
-            // labelTempAudio
-            // 
-            this.labelTempAudio.AutoSize = true;
-            this.labelTempAudio.ForeColor = System.Drawing.Color.White;
-            this.labelTempAudio.Location = new System.Drawing.Point(421, 32);
-            this.labelTempAudio.Name = "labelTempAudio";
-            this.labelTempAudio.Size = new System.Drawing.Size(35, 13);
-            this.labelTempAudio.TabIndex = 81;
-            this.labelTempAudio.Text = "label7";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -399,82 +393,6 @@ namespace DIOSeries.UI {
             this.panel3.Size = new System.Drawing.Size(1043, 4);
             this.panel3.TabIndex = 80;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(25, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "DESCRIÇÃO";
-            // 
-            // buttonOpenListSeries
-            // 
-            this.buttonOpenListSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpenListSeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOpenListSeries.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenListSeries.Image")));
-            this.buttonOpenListSeries.Location = new System.Drawing.Point(975, 141);
-            this.buttonOpenListSeries.Name = "buttonOpenListSeries";
-            this.buttonOpenListSeries.Size = new System.Drawing.Size(44, 37);
-            this.buttonOpenListSeries.TabIndex = 76;
-            this.buttonOpenListSeries.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(175, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "CATEGORIA";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(25, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "ANO";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(25, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "NOME:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(22, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(373, 26);
-            this.label6.TabIndex = 68;
-            this.label6.Text = "Esse é um projeto que desenvolvi como parte dos desefios da plataforma DIO\r\ne do " +
-    "Bootcamp da Averes relacionados a plataforma .NET com C#\r\n";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(20, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(287, 29);
-            this.label5.TabIndex = 69;
-            this.label5.Text = "Detalhes da minha série";
-            // 
             // textBoxCustomDescription
             // 
             this.textBoxCustomDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -482,25 +400,45 @@ namespace DIOSeries.UI {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCustomDescription.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomDescription.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomDescription.Location = new System.Drawing.Point(28, 221);
+            this.textBoxCustomDescription.Location = new System.Drawing.Point(28, 137);
             this.textBoxCustomDescription.MaxLenght = 2147483647;
             this.textBoxCustomDescription.Multiline = true;
             this.textBoxCustomDescription.Name = "textBoxCustomDescription";
-            this.textBoxCustomDescription.Size = new System.Drawing.Size(991, 159);
+            this.textBoxCustomDescription.Size = new System.Drawing.Size(991, 243);
             this.textBoxCustomDescription.TabIndex = 79;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(25, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "DESCRIÇÃO";
             // 
             // textBoxCustomGenderId
             // 
             this.textBoxCustomGenderId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCustomGenderId.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomGenderId.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomGenderId.Location = new System.Drawing.Point(917, 141);
-            this.textBoxCustomGenderId.MaxLenght = 2147483647;
+            this.textBoxCustomGenderId.Location = new System.Drawing.Point(898, 67);
+            this.textBoxCustomGenderId.MaxLenght = 2147;
             this.textBoxCustomGenderId.Multiline = true;
             this.textBoxCustomGenderId.Name = "textBoxCustomGenderId";
-            this.textBoxCustomGenderId.Size = new System.Drawing.Size(52, 37);
+            this.textBoxCustomGenderId.Size = new System.Drawing.Size(68, 37);
             this.textBoxCustomGenderId.TabIndex = 77;
-            this.textBoxCustomGenderId.Visible = false;
+            // 
+            // buttonOpenListSeries
+            // 
+            this.buttonOpenListSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenListSeries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenListSeries.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenListSeries.Image")));
+            this.buttonOpenListSeries.Location = new System.Drawing.Point(975, 67);
+            this.buttonOpenListSeries.Name = "buttonOpenListSeries";
+            this.buttonOpenListSeries.Size = new System.Drawing.Size(44, 37);
+            this.buttonOpenListSeries.TabIndex = 76;
+            this.buttonOpenListSeries.UseVisualStyleBackColor = true;
             // 
             // textBoxCustomGenderName
             // 
@@ -508,23 +446,43 @@ namespace DIOSeries.UI {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCustomGenderName.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomGenderName.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomGenderName.Location = new System.Drawing.Point(250, 141);
+            this.textBoxCustomGenderName.Location = new System.Drawing.Point(250, 67);
             this.textBoxCustomGenderName.MaxLenght = 2147483647;
             this.textBoxCustomGenderName.Multiline = true;
             this.textBoxCustomGenderName.Name = "textBoxCustomGenderName";
             this.textBoxCustomGenderName.Size = new System.Drawing.Size(667, 37);
             this.textBoxCustomGenderName.TabIndex = 75;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(175, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "CATEGORIA";
+            // 
             // textBoxCustomYear
             // 
             this.textBoxCustomYear.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomYear.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomYear.Location = new System.Drawing.Point(74, 141);
+            this.textBoxCustomYear.Location = new System.Drawing.Point(74, 67);
             this.textBoxCustomYear.MaxLenght = 4;
             this.textBoxCustomYear.Multiline = true;
             this.textBoxCustomYear.Name = "textBoxCustomYear";
             this.textBoxCustomYear.Size = new System.Drawing.Size(95, 37);
             this.textBoxCustomYear.TabIndex = 73;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(25, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "ANO";
             // 
             // textBoxCustomTitle
             // 
@@ -532,21 +490,22 @@ namespace DIOSeries.UI {
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCustomTitle.BackColor = System.Drawing.Color.Black;
             this.textBoxCustomTitle.ForeColor = System.Drawing.Color.White;
-            this.textBoxCustomTitle.Location = new System.Drawing.Point(74, 98);
+            this.textBoxCustomTitle.Location = new System.Drawing.Point(74, 24);
             this.textBoxCustomTitle.MaxLenght = 2147483647;
             this.textBoxCustomTitle.Multiline = true;
             this.textBoxCustomTitle.Name = "textBoxCustomTitle";
             this.textBoxCustomTitle.Size = new System.Drawing.Size(957, 37);
             this.textBoxCustomTitle.TabIndex = 71;
             // 
-            // windowVideoPlayer1
+            // label1
             // 
-            this.windowVideoPlayer1.BackColor = System.Drawing.Color.Black;
-            this.windowVideoPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.windowVideoPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.windowVideoPlayer1.Name = "windowVideoPlayer1";
-            this.windowVideoPlayer1.Size = new System.Drawing.Size(341, 198);
-            this.windowVideoPlayer1.TabIndex = 83;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(25, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "NOME:";
             // 
             // FormRegisterSerie
             // 
@@ -590,8 +549,6 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomTitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonOpenListSeries;
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomGenderName;
         private System.Windows.Forms.Label label3;
@@ -618,7 +575,6 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.RadioButton radioButtonImageStrech;
         private System.Windows.Forms.TextBox textBoxPathImage;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label labelTempAudio;
         private View.Controls.WindowVideoPlayer windowVideoPlayer1;
     }
 }

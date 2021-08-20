@@ -1,6 +1,6 @@
 ﻿
-namespace DIOSeries.UI {
-    partial class FormVideo {
+namespace DIOSeries.UI.View.Forms {
+    partial class FormDashboard {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -24,36 +24,22 @@ namespace DIOSeries.UI {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVideo));
-            this.windowVideoPlayer1 = new DIOSeries.UI.View.Controls.WindowVideoPlayer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             this.SuspendLayout();
             // 
-            // windowVideoPlayer1
-            // 
-            this.windowVideoPlayer1.BackColor = System.Drawing.Color.Black;
-            this.windowVideoPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.windowVideoPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.windowVideoPlayer1.Name = "windowVideoPlayer1";
-            this.windowVideoPlayer1.Size = new System.Drawing.Size(800, 450);
-            this.windowVideoPlayer1.TabIndex = 0;
-            // 
-            // FormVideo
+            // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.windowVideoPlayer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormVideo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormVideo";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Name = "FormDashboard";
+            this.Text = "Dashboard";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private View.Controls.WindowVideoPlayer windowVideoPlayer1;
     }
 }

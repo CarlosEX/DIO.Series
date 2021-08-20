@@ -2,10 +2,10 @@
 
 namespace DIOSeries.Database {
     public class GenderDatabaseFactory {
-        public static GenderDatabase Create(string connectionString, IGender gender) {
+        public static IGenderDatabase Create(string connectionString, IGender gender) {
             return new GenderDatabase(connectionString, gender);
         }
-        public static GenderDatabase Create(string connectionString) {
+        public static IGenderDatabase Create(string connectionString) {
             return new GenderDatabase(connectionString);
         }
     }

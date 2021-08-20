@@ -26,7 +26,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -129,6 +129,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\BannerSerieFactory.cs" />
     <Compile Include="Factory\CardThumbSerieFactory.cs" />
     <Compile Include="ManagerDatabase\ApplicationDatabase.cs" />
     <Compile Include="ManagerDatabase\IApplicationConnectionString.cs" />
@@ -187,6 +188,18 @@
     </Compile>
     <Compile Include="View\Forms\FormBoxAlert.Designer.cs">
       <DependentUpon>FormBoxAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\FormDownloadVideoWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\FormDownloadVideoWeb.Designer.cs">
+      <DependentUpon>FormDownloadVideoWeb.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\FormListActiveGenders.cs">
       <SubType>Form</SubType>
@@ -251,6 +264,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Controls\BannerSeries.resx">
       <DependentUpon>BannerSeries.cs</DependentUpon>
@@ -274,30 +288,47 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormBoxAlert.resx">
       <DependentUpon>FormBoxAlert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\FormDownloadVideoWeb.resx">
+      <DependentUpon>FormDownloadVideoWeb.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormListActiveGenders.resx">
       <DependentUpon>FormListActiveGenders.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormRegisterGender.resx">
       <DependentUpon>FormRegisterGender.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormEditeGender.resx">
       <DependentUpon>FormEditeGender.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormRegisterSerie.resx">
       <DependentUpon>FormRegisterSerie.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormSeries.resx">
       <DependentUpon>FormSeries.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\FormVideo.resx">
       <DependentUpon>FormVideo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="DIO.Series_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -381,6 +412,9 @@
     <None Include="Resources\gif_net_flix.gif" />
     <None Include="Resources\icons8_ok_52px.png" />
     <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Excptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

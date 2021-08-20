@@ -1,21 +1,18 @@
 ﻿using DIOSeries.Bussines;
 using DIOSeries.Database;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace DIOSeries.UI {
     public partial class FormCategorias : Form {
         
-        private const string filterAllGender = "(0,1)";
-        private const string filterActivateGender = "(0)";
-        private const string filterDeletedeGender = "(1)";
         private static readonly string _connectionString  = ApplicationDatabase.ConnectionString;
         private readonly IGender _gender = GenderFactory.Create();
+        private FlagGender _flagGender = FlagGender.Active;
 
         public FormCategorias() {
             InitializeComponent();
-            LoadDataGridView();
+            LoadDataGridView(_flagGender);
             LoadEvents();
         }
 
@@ -28,31 +25,32 @@ namespace DIOSeries.UI {
             this.radioButtonFilterDeleted.CheckedChanged += RadioButtonFilter_Changed;
             this.radioButtonFilterActive.CheckedChanged += RadioButtonFilter_Changed;
         }
-        private string ParametersFilterColumnDeleted() {
 
-            string _filterColumnDeleted = "";
+        private FlagGender ParametersFilterColumnDeleted() {
 
             if (radioButtonFilterAll.Checked) {
-                _filterColumnDeleted = filterAllGender;
+                _flagGender = FlagGender.All;
             }
             if (radioButtonFilterActive.Checked) {
-                _filterColumnDeleted = filterActivateGender;
+                _flagGender = FlagGender.Active;
             }
             if (radioButtonFilterDeleted.Checked) {
-                _filterColumnDeleted = filterDeletedeGender;
+                _flagGender = FlagGender.Deleted;
             }
 
-            return _filterColumnDeleted;
+            return _flagGender;
         }
 
-        private DataTable LoadDataTableGenders() {
-            var genderList = GenderDatabaseFactory.Create(_connectionString);
-            string sql = $"SELECT * FROM genders WHERE gender_deleted IN {ParametersFilterColumnDeleted()}";
-            return genderList.GetGenderDataTable(sql);
-        }
-        private void LoadDataGridView() {
-            DataGridViewGender.Load(dataGridView1, LoadDataTableGenders());
+
+        private void LoadDataGridView(FlagGender flagGender) {
+            
+            DataGridViewGender.Load(
+                dataGridView1, 
+                GenderDatabaseFactory.Create(_connectionString).GetAllListGenders(flagGender)
+            );
+
             LoadQuantityGender();
+
         }
 
         private void LoadQuantityGender() {
@@ -73,11 +71,11 @@ namespace DIOSeries.UI {
                 var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
                 genderDatabase.Insert();
                 new FormBoxAlert().Show(IconBox.Success, "Categoria criada com sucesso!" );
-                LoadDataGridView();
+                LoadDataGridView(_flagGender);
             }
         }
         
-        private void DeteteGender() {
+        private void DeleteGender() {
             
             var result = MessageBox.Show("Confirma a exclusão dessa categoria?", "Deletar Categoria", buttons: MessageBoxButtons.YesNo);
 
@@ -90,7 +88,7 @@ namespace DIOSeries.UI {
                 var genderDatabase = GenderDatabaseFactory.Create(_connectionString, _gender);
                 genderDatabase.Delete();
 
-                LoadDataGridView();
+                LoadDataGridView(_flagGender);
             }
         }
 
@@ -104,21 +102,21 @@ namespace DIOSeries.UI {
 
             new FormBoxAlert().Show(IconBox.Success);
      
-            LoadDataGridView();
+            LoadDataGridView(_flagGender);
         }
         #endregion
 
         #region Events
        
         private void DeletedGender_Click(object sender, EventArgs e) {
-            DeteteGender();
+            DeleteGender();
         }
         private void AddGender_Click(object sender, EventArgs e) {
             AddGender();
         }
        
         private void RadioButtonFilter_Changed(object sender, EventArgs e) {
-            LoadDataGridView();
+            LoadDataGridView(_flagGender);
         }
         private void OpenFormRenameGender_Click(object sender, EventArgs e) {
 

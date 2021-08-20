@@ -33,8 +33,8 @@ namespace DIOSeries.UI.View.Controls {
             this.textBoxPathVideo = new System.Windows.Forms.TextBox();
             this.panelBackgroundProgressbar = new System.Windows.Forms.Panel();
             this.panelProgress = new System.Windows.Forms.Panel();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelBackgroundProgressbar.SuspendLayout();
@@ -159,7 +159,7 @@ namespace DIOSeries.UI.View.Controls {
         private System.Windows.Forms.Panel panelProgress;
         private System.Windows.Forms.Button buttonTimerTemp;
         private System.Windows.Forms.Button buttonPlayPause;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Timer timer1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

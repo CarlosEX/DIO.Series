@@ -13,15 +13,18 @@ namespace DIOSeries.UI.View.Controls {
 
         [Category("Control Video")]
         public void URL(string url) {
+            
             axWindowsMediaPlayer1.URL = url;
+            LoadTimeVideo();
+            this.buttonPlayPause.Image = Properties.Resources.image_pause;
 
+        }
+
+        private void LoadTimeVideo() {
             var timer = timer1;
             timer.Interval = 1000;
             timer.Tick += new EventHandler(OnTimedEvent);
             timer.Enabled = true;
-
-            this.buttonPlayPause.Image = Properties.Resources.image_pause;
-
         }
 
         private void HideControlsDefaultControlVideo() {
@@ -38,7 +41,6 @@ namespace DIOSeries.UI.View.Controls {
                 axWindowsMediaPlayer.Ctlcontrols.play();
                 this.buttonPlayPause.Image = Properties.Resources.image_pause;
             }
-
         }
 
         public void Pause(AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer) {
@@ -51,8 +53,6 @@ namespace DIOSeries.UI.View.Controls {
                 var currentPosition = axWindowsMediaPlayer1.Ctlcontrols.currentPosition;
                 double t = Math.Floor(duraction - currentPosition);
                 buttonTimerTemp.Text = FormatSecondsFormtHours(Convert.ToInt32(t));
-
-                    
             }
             catch {
 

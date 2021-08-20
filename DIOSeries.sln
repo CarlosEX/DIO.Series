@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorSlider", "ColorSlider\ColorSlider.csproj", "{16E224DC-7FF0-4908-8318-D6A3AC2E797A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BDB7511B-DC70-4682-B570-5C4FB8AC76CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIOSeries.Test", "DIOSeries.Test\DIOSeries.Test.csproj", "{EB39FE27-C763-4C9F-93AC-6D77052FFD23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{16E224DC-7FF0-4908-8318-D6A3AC2E797A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16E224DC-7FF0-4908-8318-D6A3AC2E797A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16E224DC-7FF0-4908-8318-D6A3AC2E797A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{3FE4E697-B887-4393-A9B5-55E327DE866D} = {CA233971-719A-48F9-9973-0E9EDA962CF4}
 		{DE1C11E4-5542-47C1-B14F-0A41DBE04B5F} = {FA4C674C-9D97-457C-9894-2FC865082582}
 		{16E224DC-7FF0-4908-8318-D6A3AC2E797A} = {CA233971-719A-48F9-9973-0E9EDA962CF4}
+		{EB39FE27-C763-4C9F-93AC-6D77052FFD23} = {BDB7511B-DC70-4682-B570-5C4FB8AC76CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3CDE41D-D815-49C3-9C60-E4AD78CBABBA}

@@ -9,11 +9,29 @@ namespace DIOSeries.UI {
     public partial class FormRegisterSerie : Form {
 
         private static readonly string _connectionString = ApplicationDatabase.ConnectionString;
-        
+        private readonly ISerie _serie;
+
         public FormRegisterSerie() {
             InitializeComponent();
             LoadEvents();
             LoadImageThumDefault();
+        }
+        public FormRegisterSerie(ISerie serie) {
+            InitializeComponent();
+            LoadEvents();
+            _serie = serie;
+            LoadDetailsSerie();
+        }
+
+        private void LoadDetailsSerie() {
+            this.textBoxCustomDescription.Text = _serie.Description;
+            this.textBoxCustomGenderName.Text = _serie.Gender.Name;
+            this.textBoxCustomGenderId.Text = _serie.Gender.Id.ToString();
+            this.textBoxCustomTitle.Text = _serie.Title;
+            this.textBoxCustomYear.Text = _serie.Year;
+            this.pictureBoxThumb.Image = Image.FromFile(_serie.Image);
+            this.textBoxPathVideo.Text = _serie.Video;
+            LoadVideo();
         }
 
         private void LoadEvents() {
@@ -30,7 +48,7 @@ namespace DIOSeries.UI {
         private void LoadImageThumDefault() {
             this.pictureBoxThumb.Image = Properties.Resources.image_thumb_default_series;
         }
-       
+
         private void SaveSerie() {
 
             if (IsValidateFilds()) {
@@ -42,6 +60,7 @@ namespace DIOSeries.UI {
                     string descriptionSerie = textBoxCustomDescription.Text;
                     string yearSerie = textBoxCustomYear.Text;
                     string pathImage = textBoxPathImage.Text;
+                    string pathVideo = textBoxPathVideo.Text;
                     string nameGender = textBoxCustomGenderName.Text;
 
                     IGender gender = GenderFactory.Create(generId, nameGender);
@@ -50,6 +69,7 @@ namespace DIOSeries.UI {
                         serie.Description = descriptionSerie;
                         serie.Year = yearSerie;
                         serie.Image = pathImage;
+                        serie.Video = pathVideo;
 
                     var dataBase = new SerieDatabase(_connectionString, serie);
                         dataBase.Insert();
@@ -74,6 +94,7 @@ namespace DIOSeries.UI {
             textBoxCustomYear.Text = string.Empty;
             textBoxCustomGenderName.Text = string.Empty;
             pictureBoxThumb.Image = Properties.Resources.image_thumb_default_series;
+            windowVideoPlayer1.Dispose();
         }
 
         private bool IsValidateFilds() {
@@ -159,10 +180,15 @@ namespace DIOSeries.UI {
 
                 if (result.ShowDialog() == DialogResult.OK) {
                     string fileName = result.FileName;
-                    windowVideoPlayer1.URL(fileName);
                     textBoxPathVideo.Text = fileName;
+                    windowVideoPlayer1.URL(fileName);
                 }
             }
+        }
+
+        private void LoadVideo() {
+            if(!string.IsNullOrEmpty(_serie.Video))
+                windowVideoPlayer1.URL(_serie.Video);
         }
 
         public void Play(AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer) {

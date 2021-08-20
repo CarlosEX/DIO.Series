@@ -23,14 +23,10 @@ namespace DIOSeries.UI {
             this.buttonConfirmed.Click += ButtonConfirmed_Click;
         }
 
-        private DataTable LoadDataTableGenders() {
-            var genderList = GenderDatabaseFactory.Create(_connectionString);
-            string sql = $"SELECT * FROM genders WHERE gender_deleted = 0";
-            return genderList.GetGenderDataTable(sql);
-        }
-
         private void LoadDataGridView() {
-            DataGridViewGender.Load(dataGridView1, LoadDataTableGenders());
+            DataGridViewGender.Load(
+                dataGridView1,
+                GenderDatabaseFactory.Create(_connectionString).GetAllListGenders(FlagGender.Active));
             LoadQuantityGender();
         }
 

@@ -14,7 +14,13 @@ namespace DIOSeries.Bussines {
         private IGender _gender;
         private StateRegister _deleted;
 
-        public int Id { get => _id; set => _id = value; }
+        public int Id { 
+            get => _id;
+            set {
+                _id = value;
+                RaisePropertyChanges();
+            }
+        }
         
         public string Title {
             get => _title;
@@ -79,11 +85,19 @@ namespace DIOSeries.Bussines {
                 RaisePropertyChanges();
             }
         }
+        public Serie(string title) {
+            _title = title;
+            _deleted = 0;
+        }
 
         public Serie(string title, IGender gender ) {
             _title = title;
             _gender = gender;
             _deleted = 0;
+        }
+
+        public void IncrementViews() {
+            _views += 1;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

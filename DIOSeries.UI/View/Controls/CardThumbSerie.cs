@@ -1,4 +1,5 @@
 ﻿using DIOSeries.Bussines;
+using DIOSeries.Database.Entities.Factory;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,10 +7,9 @@ using System.Windows.Forms;
 namespace DIOSeries.UI.Controls {
     public partial class CardThumbSerie : UserControl {
 
-        public ISerie _serie;
-        public event EventHandler ButtonOpenVideoClick;
-        public event EventHandler ButtonOpenDetailsSerie;
-        
+        private static readonly string _connectionString = ApplicationDatabase.ConnectionString;
+        private readonly ISerie _serie;
+                
         public CardThumbSerie(ISerie serie) {
             
             InitializeComponent();
@@ -21,15 +21,22 @@ namespace DIOSeries.UI.Controls {
         }
 
         private void LoadEvents() {
-            this.buttonPlay.Click += ButtonVideoPlay_Click;
-            this.buttonPropertySerie.Click += ButtonOpenDetailsSerie;
+            buttonPlay.Click += new EventHandler(ButtonVideoPlay_Click);
+            buttonPropertySerie.Click += new EventHandler(ButtonProperties_Click);
         }
+
         private void SetProperties() {
-            this.pictureBoxThumbCard.Image = LoadImage();
-            this.labelPathVideo.Text = _serie.Video;
-            this.viewsVideo1.Views = _serie.Views.ToString();
-            this.labelTitleSerie.Text = _serie.Title;
-            this.buttonPropertySerie.Tag = _serie.Id;
+            pictureBoxThumbCard.Image = LoadImage();
+            labelPathVideo.Text = _serie.Video;
+            viewsVideo1.Views = _serie.Views.ToString();
+            labelTitleSerie.Text = _serie.Title;
+            buttonPropertySerie.Tag = _serie.Id;
+        }
+
+        private void UpadateViews() {
+            _serie.IncrementViews();
+            SerieDatabaseFactory.Create(_connectionString, _serie).UpdateViews();
+            viewsVideo1.Views = _serie.Views.ToString();
         }
 
         private Image LoadImage() {
@@ -42,11 +49,14 @@ namespace DIOSeries.UI.Controls {
         }
 
         private void ButtonVideoPlay_Click(object sender, EventArgs e) {
+            
             new FormVideo(_serie.Video).Show();
+            UpadateViews();
         }
 
         private void ButtonProperties_Click(object sender, EventArgs e) {
-            ButtonOpenVideoClick.Invoke(sender, e);
+            new FormRegisterSerie(_serie).ShowDialog();
+
         }
     }
 }

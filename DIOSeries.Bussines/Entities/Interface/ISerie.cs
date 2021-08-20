@@ -2,7 +2,7 @@
 
 namespace DIOSeries.Bussines {
     public interface ISerie {
-        int Id { get; }
+        int Id { get; set; }
         string Title { get; set; }
         string Description { get; set; }
         string Year { get; set; }
@@ -11,7 +11,8 @@ namespace DIOSeries.Bussines {
         int Views { get; set; }
         IGender Gender { get; set; }
         StateRegister Deleted { get; set; }
-        
+
+        void IncrementViews();
 
         event PropertyChangedEventHandler PropertyChanged;
     }
