@@ -53,6 +53,7 @@ namespace DIOSeries.UI {
 
         }
 
+        
         private void LoadQuantityGender() {
             textBoxTotalGender.Text = this.dataGridView1.RowCount.ToString();
         }
@@ -116,6 +117,7 @@ namespace DIOSeries.UI {
         }
        
         private void RadioButtonFilter_Changed(object sender, EventArgs e) {
+            ParametersFilterColumnDeleted();
             LoadDataGridView(_flagGender);
         }
         private void OpenFormRenameGender_Click(object sender, EventArgs e) {

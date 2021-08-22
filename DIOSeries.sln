@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BDB7511B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIOSeries.Test", "DIOSeries.Test\DIOSeries.Test.csproj", "{EB39FE27-C763-4C9F-93AC-6D77052FFD23}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DIOSeriesSetup", "DIOSeriesSetup\DIOSeriesSetup.vdproj", "{1058286E-2CF1-49A6-846F-1EE5F51262D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,8 @@ Global
 		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB39FE27-C763-4C9F-93AC-6D77052FFD23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1058286E-2CF1-49A6-846F-1EE5F51262D0}.Debug|Any CPU.ActiveCfg = Debug
+		{1058286E-2CF1-49A6-846F-1EE5F51262D0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

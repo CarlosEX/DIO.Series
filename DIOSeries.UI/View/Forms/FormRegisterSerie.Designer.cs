@@ -27,10 +27,10 @@ namespace DIOSeries.UI {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegisterSerie));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonDeleteSerie = new System.Windows.Forms.Button();
+            this.buttonSplitPanelHome = new System.Windows.Forms.Button();
+            this.buttonSaveEditeSerie = new System.Windows.Forms.Button();
+            this.buttonSaveNewSerie = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.windowVideoPlayer1 = new DIOSeries.UI.View.Controls.WindowVideoPlayer();
@@ -76,90 +76,87 @@ namespace DIOSeries.UI {
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.buttonSave);
-            this.panel2.Controls.Add(this.buttonNew);
+            this.panel2.Controls.Add(this.buttonDeleteSerie);
+            this.panel2.Controls.Add(this.buttonSplitPanelHome);
+            this.panel2.Controls.Add(this.buttonSaveEditeSerie);
+            this.panel2.Controls.Add(this.buttonSaveNewSerie);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(85, 619);
             this.panel2.TabIndex = 19;
             // 
-            // button1
+            // buttonDeleteSerie
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 80);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Split";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonDeleteSerie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDeleteSerie.FlatAppearance.BorderSize = 0;
+            this.buttonDeleteSerie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonDeleteSerie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonDeleteSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteSerie.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteSerie.Image = ((System.Drawing.Image)(resources.GetObject("buttonDeleteSerie.Image")));
+            this.buttonDeleteSerie.Location = new System.Drawing.Point(0, 160);
+            this.buttonDeleteSerie.Name = "buttonDeleteSerie";
+            this.buttonDeleteSerie.Size = new System.Drawing.Size(85, 80);
+            this.buttonDeleteSerie.TabIndex = 14;
+            this.buttonDeleteSerie.Text = "Excluir EstaSerie";
+            this.buttonDeleteSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonDeleteSerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonDeleteSerie.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonSplitPanelHome
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 539);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 80);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Excluir";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSplitPanelHome.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonSplitPanelHome.FlatAppearance.BorderSize = 0;
+            this.buttonSplitPanelHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSplitPanelHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSplitPanelHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSplitPanelHome.ForeColor = System.Drawing.Color.White;
+            this.buttonSplitPanelHome.Image = ((System.Drawing.Image)(resources.GetObject("buttonSplitPanelHome.Image")));
+            this.buttonSplitPanelHome.Location = new System.Drawing.Point(0, 539);
+            this.buttonSplitPanelHome.Name = "buttonSplitPanelHome";
+            this.buttonSplitPanelHome.Size = new System.Drawing.Size(85, 80);
+            this.buttonSplitPanelHome.TabIndex = 13;
+            this.buttonSplitPanelHome.Text = "Split Orientação";
+            this.buttonSplitPanelHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSplitPanelHome.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonSplitPanelHome.UseVisualStyleBackColor = true;
             // 
-            // buttonSave
+            // buttonSaveEditeSerie
             // 
-            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-            this.buttonSave.Location = new System.Drawing.Point(0, 80);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(85, 80);
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "Salvar";
-            this.buttonSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSaveEditeSerie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSaveEditeSerie.FlatAppearance.BorderSize = 0;
+            this.buttonSaveEditeSerie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSaveEditeSerie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSaveEditeSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveEditeSerie.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveEditeSerie.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveEditeSerie.Image")));
+            this.buttonSaveEditeSerie.Location = new System.Drawing.Point(0, 80);
+            this.buttonSaveEditeSerie.Name = "buttonSaveEditeSerie";
+            this.buttonSaveEditeSerie.Size = new System.Drawing.Size(85, 80);
+            this.buttonSaveEditeSerie.TabIndex = 12;
+            this.buttonSaveEditeSerie.Text = "Salvar Alterações";
+            this.buttonSaveEditeSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSaveEditeSerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonSaveEditeSerie.UseVisualStyleBackColor = true;
             // 
-            // buttonNew
+            // buttonSaveNewSerie
             // 
-            this.buttonNew.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonNew.FlatAppearance.BorderSize = 0;
-            this.buttonNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.buttonNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
-            this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNew.ForeColor = System.Drawing.Color.White;
-            this.buttonNew.Image = ((System.Drawing.Image)(resources.GetObject("buttonNew.Image")));
-            this.buttonNew.Location = new System.Drawing.Point(0, 0);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(85, 80);
-            this.buttonNew.TabIndex = 7;
-            this.buttonNew.Text = "Nova";
-            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Visible = false;
+            this.buttonSaveNewSerie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSaveNewSerie.FlatAppearance.BorderSize = 0;
+            this.buttonSaveNewSerie.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSaveNewSerie.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(5)))), ((int)(((byte)(20)))));
+            this.buttonSaveNewSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveNewSerie.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveNewSerie.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveNewSerie.Image")));
+            this.buttonSaveNewSerie.Location = new System.Drawing.Point(0, 0);
+            this.buttonSaveNewSerie.Name = "buttonSaveNewSerie";
+            this.buttonSaveNewSerie.Size = new System.Drawing.Size(85, 80);
+            this.buttonSaveNewSerie.TabIndex = 8;
+            this.buttonSaveNewSerie.Text = "Salvar NovaSerie";
+            this.buttonSaveNewSerie.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSaveNewSerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonSaveNewSerie.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -175,6 +172,7 @@ namespace DIOSeries.UI {
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Black;
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.textBoxCustomDescription);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -428,6 +426,7 @@ namespace DIOSeries.UI {
             this.textBoxCustomGenderId.Name = "textBoxCustomGenderId";
             this.textBoxCustomGenderId.Size = new System.Drawing.Size(68, 37);
             this.textBoxCustomGenderId.TabIndex = 77;
+            this.textBoxCustomGenderId.Visible = false;
             // 
             // buttonOpenListSeries
             // 
@@ -522,6 +521,7 @@ namespace DIOSeries.UI {
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Série";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Closed);
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -543,9 +543,7 @@ namespace DIOSeries.UI {
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Button buttonSaveNewSerie;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomTitle;
         private System.Windows.Forms.Label label1;
@@ -557,7 +555,6 @@ namespace DIOSeries.UI {
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomGenderId;
         private DIO.Series.View.Controls.TextBoxCustom textBoxCustomDescription;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.SplitContainer splitContainer2;
@@ -576,5 +573,8 @@ namespace DIOSeries.UI {
         private System.Windows.Forms.TextBox textBoxPathImage;
         private System.Windows.Forms.Timer timer1;
         private View.Controls.WindowVideoPlayer windowVideoPlayer1;
+        private System.Windows.Forms.Button buttonSaveEditeSerie;
+        private System.Windows.Forms.Button buttonDeleteSerie;
+        private System.Windows.Forms.Button buttonSplitPanelHome;
     }
 }

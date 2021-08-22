@@ -5,7 +5,6 @@ namespace DIOSeries.UI {
         public FormVideo(string url) {
             InitializeComponent();
             this.windowVideoPlayer1.URL(url);
-            //this.windowVideoPlayer1.fulls
         }
     }
 }

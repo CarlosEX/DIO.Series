@@ -34,7 +34,7 @@ namespace DIOSeries.Database.Entities {
             sql.Append("genders.gender_name AS genderName ");
             sql.Append("FROM series ");
             sql.Append("INNER JOIN genders ON genders.gender_id = series.gender_id ");
-            sql.Append($"WHERE series.gender_id = {idGender}");
+            sql.Append($"WHERE series.gender_id = {idGender} AND series.serie_deleted = 0");
 
 
             using (var conn = new SQLiteConnection(_connectionString)) {
@@ -69,6 +69,9 @@ namespace DIOSeries.Database.Entities {
                         }
                     }
                 }
+
+                conn.Close();
+                conn.Dispose();
             }
             return series;
         }
@@ -141,6 +144,8 @@ namespace DIOSeries.Database.Entities {
                     command.CommandText = $"UPDATE series SET serie_views = {_serie.Views} WHERE serie_id = {_serie.Id}";
                     command.ExecuteNonQuery();
                 }
+                conn.Close();
+                conn.Dispose();
             }
         }
 
@@ -150,11 +155,12 @@ namespace DIOSeries.Database.Entities {
                 using (var command = conn.CreateCommand()) {
 
                     StringBuilder sql = new StringBuilder();
-                    sql.Append("UPDATE series ");
-                    sql.Append($"serie_title = {_serie.Title} ");
-                    sql.Append($"serie_description = {_serie.Description} ");
-                    sql.Append($"serie_year = {_serie.Year} ");
-                    sql.Append($"serie_image = {_serie.Image} ");
+                    sql.Append("UPDATE series SET ");
+                    sql.Append($"serie_title = '{_serie.Title}', ");
+                    sql.Append($"serie_description = '{_serie.Description}', ");
+                    sql.Append($"serie_year = '{_serie.Year}', ");
+                    sql.Append($"serie_image = '{_serie.Image}', ");
+                    sql.Append($"serie_video = '{_serie.Video}', ");
                     sql.Append($"gender_id = {_serie.Gender.Id} ");
                     sql.Append($"WHERE serie_id = {_serie.Id}");
 
@@ -168,9 +174,11 @@ namespace DIOSeries.Database.Entities {
             using (var conn = new SQLiteConnection(_connectionString)) {
                 conn.Open();
                 using (var command = conn.CreateCommand()) {
-                    command.CommandText = $"UPDATE series SET serie_deleted = {_serie.Deleted} WHERE serie_id = {_serie.Id}";
+                    command.CommandText = $"UPDATE series SET serie_deleted = {1} WHERE serie_id = {_serie.Id}";
                     command.ExecuteNonQuery();
                 }
+                conn.Close();
+                conn.Dispose();
             }
         }
     }

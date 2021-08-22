@@ -55,8 +55,9 @@ namespace DIOSeries.UI.Controls {
         }
 
         private void ButtonProperties_Click(object sender, EventArgs e) {
-            new FormRegisterSerie(_serie).ShowDialog();
-
+            var form = new FormRegisterSerie(_serie);
+            form.WindowState = FormWindowState.Maximized;
+            form.ShowDialog();
         }
     }
 }

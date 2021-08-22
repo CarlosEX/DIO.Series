@@ -67,6 +67,7 @@ namespace DIOSeries.UI {
             }
 
         }
+
         private void SizeBannerWidth(int width) {
 
             foreach (BannerSeries banner in panelSeries.Controls) {

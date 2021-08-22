@@ -25,10 +25,13 @@ namespace DIOSeries.Database {
                     using (var adapter = new SQLiteDataAdapter(command)) {
                         using (var dataTable = new DataTable()) {
                             adapter.Fill(dataTable);
+                            conn.Close();
+                            conn.Dispose();
                             return dataTable;
                         }
                     }
                 }
+                
             }
         }
 
@@ -83,8 +86,11 @@ namespace DIOSeries.Database {
                         }
                     }
                 }
+                conn.Close();
+                conn.Dispose();
+                return genders;
             }
-            return genders;
+            
         }
 
         public void Insert() {
@@ -96,6 +102,8 @@ namespace DIOSeries.Database {
                     command.Parameters.AddWithValue($"@gender_name", _gender.Name);
                     command.ExecuteNonQuery();
                 }
+                conn.Close();
+                conn.Dispose();
             }
         }
 
@@ -106,6 +114,8 @@ namespace DIOSeries.Database {
                     command.CommandText = $"UPDATE genders SET gender_deleted = {_gender.Deleted} WHERE gender_id = {_gender.Id}";
                     command.ExecuteNonQuery();
                 }
+                conn.Close();
+                conn.Dispose();
             }
         }
 
@@ -116,6 +126,8 @@ namespace DIOSeries.Database {
                     command.CommandText = $"UPDATE genders SET gender_name = '{_gender.Name}' WHERE gender_id = {_gender.Id}";
                     command.ExecuteNonQuery();
                 }
+                conn.Close();
+                conn.Dispose();
             }
         }
     }
